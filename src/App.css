@@ -8,4 +8,10 @@ body{
     max-width: 640px;
     margin: 0 auto;
     background-image: linear-gradient(to bottom right, #2B1C4D 2%, #1A1A1A 98%);
+    position: relative;
+}
+.bg-rectangle{
+    background-image: url("./assets/rectangle.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }

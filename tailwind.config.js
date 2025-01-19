@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         primary: "#6B46C1",
+        accent: "#F97316",
       },
       fontFamily: {
         adlam: '"ADLaM Display", serif',
