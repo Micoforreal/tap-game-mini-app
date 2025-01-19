@@ -3,10 +3,11 @@ import rank from "../assets/rank.svg";
 import TopHeader from "../components/TopHeader";
 import coins2 from "../assets/coins2.png";
 import tapImg from "../assets/tapImg.png";
+import DailyReward from "../components/DailyReward";
 
 export default function HomePage() {
   return (
-    <section className="flex flex-col items-start justify-start w-full gap-9">
+    <section className="relative flex flex-col items-start justify-start w-full gap-9">
       <TopHeader />
       <section className="w-[95%] max-w-[334px] mx-auto grid grid-cols-3 gap-4">
         <div className="w-full border border-[#EBEBEB]/30 rounded-lg py-1 flex flex-col justify-center items-center gap-1 bg-white/5">
