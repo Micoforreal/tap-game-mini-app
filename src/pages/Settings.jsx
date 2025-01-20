@@ -2,8 +2,8 @@ import { BadgeCheck, Globe, MailOpen, Radio } from "lucide-react";
 
 export default function Settings() {
   return (
-    <section className="relative flex flex-col items-start justify-start w-full px-4 pb-24">
-      <div className="flex items-start justify-start w-full gap-4 mt-12">
+    <section className="relative flex flex-col items-start justify-start w-full px-4 pt-5 pb-24">
+      <div className="flex items-start justify-start w-full gap-4">
         <div className="text-3xl font-light text-white font-adlam">
           <p>$ EX</p>
           <p className="ml-10 leading-none">69</p>

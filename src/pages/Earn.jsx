@@ -23,8 +23,8 @@ export default function Earn() {
       "w-[108px] py-2 text-base font-jakarta font-bold text-white outline-none",
   };
   return (
-    <section className="flex flex-col items-start justify-start w-full px-4">
-      <section className="max-w-[350px] w-full flex justify-center items-center gap-3 mt-12 mx-auto">
+    <section className="flex flex-col items-start justify-start w-full px-4 pt-5">
+      <section className="max-w-[350px] w-full flex justify-center items-center gap-3 mx-auto">
         <button
           className={!componentState ? navState.active : navState.passive}
           onClick={() => changeComp("task")}

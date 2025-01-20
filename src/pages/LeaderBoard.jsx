@@ -3,9 +3,9 @@ import coins2 from "../assets/coins2.png";
 
 export default function LeaderBoard() {
   return (
-    <section className="relative flex flex-col items-start justify-start w-full gap-12 bg1">
+    <section className="relative flex flex-col items-start justify-start w-full gap-12 pt-5 bg1">
       <div className="size-[300px] bg-[#FC9853]/35 blur-[250px] absolute -top-32 left-[50%] -translate-x-[50%] pointer-events-none" />
-      <div className="flex items-start justify-between w-full gap-2 px-4 mt-12">
+      <div className="flex items-start justify-between w-full gap-2 px-4">
         <ArrowLeft className="stroke-white" />
         <div className="text-3xl font-light text-white font-adlam">
           <p>$ EX</p>

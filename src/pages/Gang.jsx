@@ -3,8 +3,8 @@ import coins2 from "../assets/coins2.png";
 
 export default function Gang() {
   return (
-    <section className="relative flex flex-col items-start justify-start w-full px-4">
-      <div className="flex items-start justify-start w-full gap-4 mt-12">
+    <section className="relative flex flex-col items-start justify-start w-full px-4 pt-5">
+      <div className="flex items-start justify-start w-full gap-4">
         <div className="text-3xl font-light text-white font-adlam">
           <p>$ EX</p>
           <p className="ml-10 leading-none">69</p>

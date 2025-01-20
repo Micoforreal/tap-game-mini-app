@@ -61,22 +61,13 @@ export default function RootLayout() {
             className={({ isActive }) =>
               isActive ? navProperty.isActive : navProperty.isPaasive
             }
-            to={"/reward"}
+            to={"/meme"}
           >
-            <img src={gift} alt="gift" className="object-contain size-5" />
-            <p className="text-xs leading-none font-jakarta">Rewards</p>
+            <img src={meme} alt="meme" className="object-contain size-5" />
+            <p className="text-xs leading-none font-jakarta whitespace-nowrap">
+              Meme Ai
+            </p>
           </NavLink>
-          {/* <NavLink
-          className={({ isActive }) =>
-            isActive ? navProperty.isActive : navProperty.isPaasive
-          }
-          to={"/meme"}
-        >
-          <img src={meme} alt="meme" className="object-contain size-5" />
-          <p className="text-xs leading-none font-jakarta whitespace-nowrap">
-            Meme Ai
-          </p>
-        </NavLink> */}
         </nav>
       </header>
 

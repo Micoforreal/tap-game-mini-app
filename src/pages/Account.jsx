@@ -12,8 +12,8 @@ export default function Account() {
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-start w-full px-4 pb-24">
-      <section className="max-w-[300px] w-full flex justify-start items-start gap-3 mt-12">
+    <section className="relative flex flex-col items-center justify-start w-full px-4 pt-5 pb-24">
+      <section className="max-w-[300px] w-full flex justify-start items-start gap-3">
         <button
           className={isProfile ? buttonState.active : buttonState.passive}
           onClick={() => setIsProfile(true)}

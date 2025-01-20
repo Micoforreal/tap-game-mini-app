@@ -2,11 +2,14 @@ import { Settings } from "lucide-react";
 import line from "../assets/line.png";
 import userImg from "../assets/userimg.png";
 import thunder from "../assets/thunder.png";
+import { Link } from "react-router-dom";
 export default function TopHeader() {
   return (
     <section className="w-full bg-gradient-to-b from-[#0F0625] to-[#2C2349] flex justify-between items-center px-3 pb-12 border-t-0 pt-5 relative bg-rectangle z-30">
       <section className="z-10 flex items-center justify-start gap-2">
-        <Settings className="size-6 stroke-white" />
+        <Link to={"/settings"}>
+          <Settings className="size-6 stroke-white" />
+        </Link>
         <div className="bg-gradient-to-br from-[#D5D1DD] to-[#9980CF] rounded-full flex justify-center items-center px-2 py-1 gap-1">
           <div className="bg-[#6B46C1] rounded-full">
             <img src={line} alt="line" className="size-8" />
