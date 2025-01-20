@@ -4,7 +4,7 @@ import userImg from "../assets/userimg.png";
 import thunder from "../assets/thunder.png";
 export default function TopHeader() {
   return (
-    <section className="w-full bg-gradient-to-b from-[#0F0625] to-[#2C2349] flex justify-between items-center px-3 pb-12 border-t-0 pt-5 relative bg-rectangle">
+    <section className="w-full bg-gradient-to-b from-[#0F0625] to-[#2C2349] flex justify-between items-center px-3 pb-12 border-t-0 pt-5 relative bg-rectangle z-30">
       <section className="z-10 flex items-center justify-start gap-2">
         <Settings className="size-6 stroke-white" />
         <div className="bg-gradient-to-br from-[#D5D1DD] to-[#9980CF] rounded-full flex justify-center items-center px-2 py-1 gap-1">
