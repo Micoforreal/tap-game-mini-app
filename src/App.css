@@ -23,5 +23,10 @@ body{
     background-image: url("./assets/bg1.png");
     background-repeat: no-repeat;
     background-position: center;
+}
 
+@media screen and (max-width: 410px) {
+    .smallTxt{
+        font-size: 60px;
+    }
 }

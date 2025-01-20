@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./App.css";
-import { GetStarted, HomePage, LeaderBoard } from "./pages";
+import { GetStarted, HomePage, LeaderBoard, Account } from "./pages";
 import RootLayout from "./layout/RootLayout";
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
           <Route index element={<HomePage />} />
         </Route>
         <Route path="/leaderboard" element={<LeaderBoard />} />
+        <Route path="/account" element={<Account />} />
       </>
     )
   );
