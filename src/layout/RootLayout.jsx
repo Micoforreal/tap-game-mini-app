@@ -19,53 +19,54 @@ export default function RootLayout() {
   };
   return (
     <section className="relative w-full">
-      <nav className="flex items-center justify-center max-w-fit w-full gap-4 px-6 py-2 rounded-full bg-white/5 border border-[#6B46C1]/40 fixed bottom-4 right-[50%] translate-x-[50%] z-30">
-        <NavLink
-          to={"/earn"}
-          className={({ isActive }) =>
-            isActive ? navProperty.isActive : navProperty.isPaasive
-          }
-        >
-          <img src={coins} alt="coins" className="object-contain size-5" />
-          <p className="text-xs leading-none font-jakarta">Earn</p>
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? navProperty.isActive : navProperty.isPaasive
-          }
-          to={"/casino"}
-        >
-          <img src={game} alt="game" className="object-contain size-5" />
-          <p className="text-xs leading-none font-jakarta">Casino</p>
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? homeNav.isActive : homeNav.isPassive
-          }
-          to={"/"}
-        >
-          <p>$Ex</p>
-          <p>69</p>
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? navProperty.isActive : navProperty.isPaasive
-          }
-          to={"/gang"}
-        >
-          <img src={users} alt="user" className="object-contain size-5" />
-          <p className="text-xs leading-none font-jakarta">Gang</p>
-        </NavLink>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? navProperty.isActive : navProperty.isPaasive
-          }
-          to={"/reward"}
-        >
-          <img src={gift} alt="gift" className="object-contain size-5" />
-          <p className="text-xs leading-none font-jakarta">Rewards</p>
-        </NavLink>
-        {/* <NavLink
+      <header className="bg-gradient-to-b from-[#36265A] to-[#1F1B28] w-full max-w-[640px] h-[105px] flex justify-center items-center fixed bottom-0 left-1/2 -translate-x-1/2 z-30">
+        <nav className="flex items-center justify-center max-w-fit w-full gap-4 px-6 py-2 rounded-full bg-white/5 border border-[#6B46C1]/40">
+          <NavLink
+            to={"/earn"}
+            className={({ isActive }) =>
+              isActive ? navProperty.isActive : navProperty.isPaasive
+            }
+          >
+            <img src={coins} alt="coins" className="object-contain size-5" />
+            <p className="text-xs leading-none font-jakarta">Earn</p>
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? navProperty.isActive : navProperty.isPaasive
+            }
+            to={"/casino"}
+          >
+            <img src={game} alt="game" className="object-contain size-5" />
+            <p className="text-xs leading-none font-jakarta">Casino</p>
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? homeNav.isActive : homeNav.isPassive
+            }
+            to={"/"}
+          >
+            <p>$Ex</p>
+            <p>69</p>
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? navProperty.isActive : navProperty.isPaasive
+            }
+            to={"/gang"}
+          >
+            <img src={users} alt="user" className="object-contain size-5" />
+            <p className="text-xs leading-none font-jakarta">Gang</p>
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? navProperty.isActive : navProperty.isPaasive
+            }
+            to={"/reward"}
+          >
+            <img src={gift} alt="gift" className="object-contain size-5" />
+            <p className="text-xs leading-none font-jakarta">Rewards</p>
+          </NavLink>
+          {/* <NavLink
           className={({ isActive }) =>
             isActive ? navProperty.isActive : navProperty.isPaasive
           }
@@ -76,8 +77,10 @@ export default function RootLayout() {
             Meme Ai
           </p>
         </NavLink> */}
-      </nav>
-      <main className="w-full min-h-screen pb-24 bg-transparent">
+        </nav>
+      </header>
+
+      <main className="w-full min-h-screen bg-transparent pb-28">
         <Outlet />
       </main>
     </section>
