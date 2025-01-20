@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./App.css";
-import { GetStarted, HomePage, LeaderBoard, Account } from "./pages";
+import { GetStarted, HomePage, LeaderBoard, Account, Settings } from "./pages";
 import RootLayout from "./layout/RootLayout";
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
         </Route>
         <Route path="/leaderboard" element={<LeaderBoard />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/settings" element={<Settings />} />
       </>
     )
   );
