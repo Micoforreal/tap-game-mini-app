@@ -5,9 +5,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./App.css";
-import { GetStarted } from "./pages";
+import { GetStarted, HomePage, LeaderBoard } from "./pages";
 import RootLayout from "./layout/RootLayout";
-import HomePage from "./pages/HomePage";
 
 function App() {
   const router = createBrowserRouter(
@@ -17,6 +16,7 @@ function App() {
         <Route path="/" element={<RootLayout />}>
           <Route index element={<HomePage />} />
         </Route>
+        <Route path="/leaderboard" element={<LeaderBoard />} />
       </>
     )
   );
