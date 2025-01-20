@@ -13,6 +13,7 @@ import {
   Settings,
   Gang,
   Casino,
+  Earn,
 } from "./pages";
 import RootLayout from "./layout/RootLayout";
 
@@ -25,6 +26,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="gang" element={<Gang />} />
           <Route path="casino" element={<Casino />} />
+          <Route path="earn" element={<Earn />} />
         </Route>
         <Route path="/leaderboard" element={<LeaderBoard />} />
         <Route path="/account" element={<Account />} />

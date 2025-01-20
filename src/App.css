@@ -24,6 +24,12 @@ body{
     background-repeat: no-repeat;
     background-position: center;
 }
+.bg2{
+    background-image: url("./assets/bg2.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+}
 
 @media screen and (max-width: 410px) {
     .smallTxt{
