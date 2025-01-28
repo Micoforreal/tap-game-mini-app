@@ -12,7 +12,7 @@ export default function HomePage() {
   const [userData, setUserData] = useState({
     coins: 500,
     tickets: 0,
-    keys: 0,
+    keys: 2,
     rank: 1000,
     experience: 69,
     multiplier: 1,
@@ -24,7 +24,7 @@ export default function HomePage() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch('/api/stats', {
+        const response = await fetch('https://dd79-102-91-93-227.ngrok-free.app/api/user/stats', {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
