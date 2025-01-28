@@ -12,7 +12,7 @@ export default function HomePage() {
   const [userData, setUserData] = useState({
     coins: 500,
     tickets: 0,
-    keys: 2,
+    keys: 0,
     rank: 1000,
     experience: 69,
     multiplier: 1,
