@@ -31,35 +31,41 @@ export default function HomePage() {
       tg.expand();
     }
   }, []);
-  useEffect(() => {
+  // useEffect(() => {
    
         console.log(telegram);
  
-}, [telegram]);
+// }, [telegram]);
 
+
+
+
+
+
+
+const fetchUserData = async () => {
+  if(telegram?.initDataUnsafe?.user){
+  try {
+    const postData= {
+      telegramId:telegram.initDataUnsafe.user.id
+    }
+
+      const response = await axios.post('https://af5e-102-91-103-230.ngrok-free.app/api/user/init',postData);
+      if (response.ok) {
+        const data = await response.json();
+        setUserData(data);
+      }
+    } catch (error) {
+      console.error('Could Not get User Data:', error);
+    }
+  }else{
+    console.log("You are currently not using telegram ")
+  }
+};
 
   // Fetch user data on mount
   useEffect(() => {
-    const fetchUserData = async () => {
-      if(telegram&&telegram.initDataUnsafe && telegram.initDataUnsafe.user){
-      try {
-        const postData= {
-          telegramId:telegram.initDataUnsafe.user.id
-        }
-
-          const response = await axios.post('https://af5e-102-91-103-230.ngrok-free.app/api/user/init',postData);
-          if (response.ok) {
-            const data = await response.json();
-            setUserData(data);
-          }
-        } catch (error) {
-          console.error('Could Not get User Data:', error);
-        }
-      }else{
-        console.log("You are currently not using telegram ")
-      }
-    };
-
+   
     fetchUserData();
   }, []);
 
