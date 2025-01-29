@@ -6,6 +6,7 @@ import coins2 from "../assets/coins2.png";
 import tapImg from "../assets/tapImg.png";
 import DailyReward from "../components/DailyReward";
 import { toast } from "react-hot-toast";
+import axios from "axios"
 
 export default function HomePage() {
   const [isPressed, setIsPressed] = useState(false);
@@ -20,27 +21,6 @@ export default function HomePage() {
   });
   const [telegram, setTelegram] = useState(null);
 
-  // Fetch user data on mount
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const response = await fetch('https://dd79-102-91-93-227.ngrok-free.app/api/user/stats', {
-          headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
-          }
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setUserData(data);
-        }
-      } catch (error) {
-        console.error('Failed to fetch user data:', error);
-      }
-    };
-
-    fetchUserData();
-  }, []);
-
   // Initialize Telegram WebApp
   useEffect(() => {
     if (window?.Telegram?.WebApp) {
@@ -50,6 +30,34 @@ export default function HomePage() {
       tg.expand();
     }
   }, []);
+
+
+
+  // Fetch user data on mount
+  useEffect(() => {
+    const fetchUserData = async () => {
+      if(telegram&&telegram.initDataUnsafe && telegram.initDataUnsafe.user){
+      try {
+        const postData= {
+          telegramId:telegram.initDataUnsafe.user.id
+        }
+
+          const response = await axios.post('https://af5e-102-91-103-230.ngrok-free.app/api/user/init',postData);
+          if (response.ok) {
+            const data = await response.json();
+            setUserData(data);
+          }
+        } catch (error) {
+          console.error('Could Not get User Data:', error);
+        }
+      }else{
+        console.log("You are currently not using telegram ")
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
 
   const handleTapStart = () => {
     setIsPressed(true);
@@ -65,7 +73,7 @@ export default function HomePage() {
 
   const handleTapReward = async () => {
     try {
-      const response = await fetch('/api/tap', {
+      const response = await fetch('https://af5e-102-91-103-230.ngrok-free.app/api/user/tap', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
