@@ -28,7 +28,7 @@ export default function TopHeader() {
       <section className="z-10 flex flex-col items-center justify-center gap-2">
         <img src={userImg} alt="user" className="size-12" />
         <p className="text-sm font-normal leading-none text-white font-adlam">
-        <span>{telegram? telegram?.initDataUnsafe?.user?.first_id:"nan"}</span>   <span>{telegram? telegram?.initDataUnsafe?.user?.last_name:"nan"}</span>
+        <span>{telegram?.initDataUnsafe?.user?.first_name}</span>  <span>{ telegram?.initDataUnsafe?.user?.last_name}</span>
         </p>
       </section>
       <section className="bg-gradient-to-br from-[#D5D1DD] to-[#9980CF] rounded-full flex justify-center items-center px-2 py-1 gap-1 z-10">
