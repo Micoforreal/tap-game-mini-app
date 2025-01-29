@@ -27,6 +27,7 @@ export default function HomePage() {
       const tg = window.Telegram.WebApp;
       tg.ready();
       tg.expand();
+      setTelegram(tg)
     }
   }, []);
   // useEffect(() => {
@@ -41,6 +42,15 @@ export default function HomePage() {
 
 
 
+  // Fetch user data on mount
+  useEffect(() => {
+   
+    fetchUserData();
+  }, [telegram]);
+
+
+
+  
 const fetchUserData = async () => {
   if(telegram?.initDataUnsafe?.user){
   try {
@@ -61,11 +71,6 @@ const fetchUserData = async () => {
   }
 };
 
-  // Fetch user data on mount
-  useEffect(() => {
-   
-    fetchUserData();
-  }, []);
 
 
   const handleTapStart = () => {
