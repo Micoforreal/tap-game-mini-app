@@ -23,10 +23,8 @@ export default function HomePage() {
 
   // Initialize Telegram WebApp
   useEffect(() => {
-    if (window?.Telegram?.WebApp) {
+    if (window.Telegram.WebApp) {
       const tg = window.Telegram.WebApp;
-
-      console.log(telegram)
       tg.ready();
       tg.expand();
     }
