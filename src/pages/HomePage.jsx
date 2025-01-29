@@ -130,7 +130,9 @@ const fetchUserData = async () => {
             </p>
           </div>
           <p className="text-base font-medium text-white font-jakarta">
-            Tickets {telegram? telegram?.initDataUnsafe?.user?.id:"nan"}
+            Tickets {telegram? telegram?.initDataUnsafe?.user?.first_name:"nan"}
+            {telegram? telegram?.initDataUnsafe?.user?.first_id:"nan"}
+            {telegram? telegram?.initDataUnsafe?.user?.last_name:"nan"}
           </p>
         </div>
         <div className="w-full border border-[#EBEBEB]/30 rounded-lg py-1 flex flex-col justify-center items-center gap-1 bg-white/5">
