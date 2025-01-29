@@ -55,7 +55,6 @@ export default function HomePage() {
 
   
 const fetchUserData = async () => {
-  // if(telegram?.initDataUnsafe?.user){
   try {
     const postData= {
       telegramId:telegram.initDataUnsafe.user.id
@@ -68,9 +67,7 @@ const fetchUserData = async () => {
     } catch (error) {
       console.error('Could Not get User Data:', error);
     }
-  // }else{
-  //   console.log("You are currently not using telegram ")
-  // }
+  
 };
 
 
