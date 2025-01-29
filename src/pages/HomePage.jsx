@@ -25,16 +25,16 @@ export default function HomePage() {
   useEffect(() => {
     if (window?.Telegram?.WebApp) {
       const tg = window.Telegram.WebApp;
-      setTelegram(tg);
+
       console.log(telegram)
       tg.ready();
       tg.expand();
     }
   }, []);
   useEffect(() => {
-    if (telegram) {
+   
         console.log(telegram);
-    }
+ 
 }, [telegram]);
 
 
