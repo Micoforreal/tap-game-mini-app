@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Database, KeyRound, Ticket } from "lucide-react";
 import rank from "../assets/rank.svg";
 import TopHeader from "../components/TopHeader";
@@ -7,70 +7,15 @@ import tapImg from "../assets/tapImg.png";
 import DailyReward from "../components/DailyReward";
 import { toast } from "react-hot-toast";
 import axios from "axios"
+import { UserContext } from "../context/User";
+import { TelegramContext } from "../context/Telegram";
+import { handleTapReward } from "../helpers/handlers";
 
 export default function HomePage() {
   const [isPressed, setIsPressed] = useState(false);
-  const [userData, setUserData] = useState({
-    coins: 500,
-    tickets: 0,
-    keys: 2,
-    rank: 1000,
-    experience: 69,
-    multiplier: 1,
-    tapPower: 1
-  });
-  const [telegram, setTelegram] = useState(null);
-  
-  const tg = window.Telegram.WebApp;
-  useEffect(() => {
-    // if (window?.Telegram?.WebApp) {
-      tg.ready();
-      tg.expand();
-      setTelegram(tg);
-    // }/
-  }, []);
-  // useEffect(() => {
-   
-        console.log(telegram);
+  const {userData}= useContext(UserContext)
+  const {telegram}= useContext(TelegramContext)
  
-// }, [telegram]);
-
-
-
-
-
-
-
-  // Fetch user data on mount
-  useEffect(() => {
-    if(telegram?.initDataUnsafe?.user){
-    fetchUserData();
-    } else{
-      console.log("You are currently not using telegram ")
-    }
-  }, [telegram]);
-
-
-
-  
-const fetchUserData = async () => {
-  try {
-    const postData= {
-      telegramId:telegram.initDataUnsafe.user.id
-    }
-
-      const response = await axios.post('https://af5e-102-91-103-230.ngrok-free.app/api/user/init',postData);
-      if  (response.status === 200) {
-        setUserData(response.data); 
-      }
-    } catch (error) {
-      console.error('Could Not get User Data:', error);
-    }
-  
-};
-
-
-
   const handleTapStart = () => {
     setIsPressed(true);
     if (telegram?.hapticFeedback) {
@@ -83,41 +28,8 @@ const fetchUserData = async () => {
     handleTapReward();
   };
 
-  const handleTapReward = async () => {
-    try {
-      const response = await fetch('https://af5e-102-91-103-230.ngrok-free.app/api/user/tap', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'application/json'
-        }
-      });
 
-      if (!response.ok) throw new Error('Tap failed');
-
-      const data = await response.json();
-      
-      // Update user data with new values
-      setUserData(prev => ({
-        ...prev,
-        ...data.user
-      }));
-
-      // Show reward toast
-      toast.success(`+${data.rewards.coins} coins!`);
-
-      if (telegram?.hapticFeedback) {
-        telegram.hapticFeedback.notificationOccurred('success');
-      }
-    } catch (error) {
-      console.error('Error processing tap:', error);
-      toast.error('Failed to process tap');
-      if (telegram?.hapticFeedback) {
-        telegram.hapticFeedback.notificationOccurred('error');
-      }
-    }
-  };
-
+  
   return (
     <section className="relative flex flex-col items-start justify-start w-full gap-9">
       <TopHeader />
