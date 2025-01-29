@@ -21,13 +21,13 @@ export default function HomePage() {
   });
   const [telegram, setTelegram] = useState(null);
   
+  const tg = window.Telegram.WebApp;
   useEffect(() => {
-    if (window?.Telegram?.WebApp) {
-      const tg = window.Telegram.WebApp;
+    // if (window?.Telegram?.WebApp) {
       tg.ready();
       tg.expand();
       setTelegram(tg);
-    }
+    // }/
   }, []);
   // useEffect(() => {
    
