@@ -31,7 +31,11 @@ export default function HomePage() {
       tg.expand();
     }
   }, []);
-
+  useEffect(() => {
+    if (telegram) {
+        console.log(telegram);
+    }
+}, [telegram]);
 
 
   // Fetch user data on mount
