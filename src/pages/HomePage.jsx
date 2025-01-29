@@ -22,14 +22,14 @@ export default function HomePage() {
   const [telegram, setTelegram] = useState(null);
 
   // Initialize Telegram WebApp
-  useEffect(() => {
+  // useEffect(() => {
     if (window?.Telegram?.WebApp) {
       const tg = window.Telegram.WebApp;
       tg.ready();
       tg.expand();
       setTelegram(tg)
     }
-  }, []);
+  // }, []);
   // useEffect(() => {
    
         console.log(telegram);
