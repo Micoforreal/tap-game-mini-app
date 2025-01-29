@@ -26,6 +26,7 @@ export default function HomePage() {
     if (window?.Telegram?.WebApp) {
       const tg = window.Telegram.WebApp;
       setTelegram(tg);
+      console.log(telegram)
       tg.ready();
       tg.expand();
     }
