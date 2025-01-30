@@ -8,6 +8,9 @@ import { toast } from "react-hot-toast";
 import { UserContext } from "../context/User";
 import { TelegramContext } from "../context/Telegram";
 import { fetchUserData } from "../helpers/fetchUserData";
+import { handleTapReward } from "../helpers/handlers";
+
+
 
 const TAPS_PER_LEVEL = 3000;
 
@@ -91,7 +94,10 @@ export default function HomePage() {
   useEffect(() => {
     if (isClicking === false && clickCount > 0) {
       clickTimeout = setTimeout(() => {
+        handleTapReward({coin:userData.coins,tapCount:clickCount})
+
         setClickCount(0);
+
       }, 1000);
     }
   }, [isClicking]);
