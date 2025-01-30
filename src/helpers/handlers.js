@@ -12,10 +12,14 @@ export const handleTapReward = async ({coin,tapCount}) => {
     try {
       const token = await localStorage.getItem("token");
       console.log(token)
-      const response = await axios.post('https://af5e-102-91-103-230.ngrok-free.app/api/user/tap',{coin,tapCount},  {headers:{
-                "Content-Type": "application/json",
-                Authorization:`Bearer ${token}`
-            }});
+
+
+      config ={
+        headers:{
+        "Content-Type": "application/json",
+        Authorization:`Bearer ${token}`
+    }}
+      const response = await axios.post('https://af5e-102-91-103-230.ngrok-free.app/api/user/tap',{coin,tapCount},config);
 
       if (!response.ok) throw new Error('Tap failed');
 
