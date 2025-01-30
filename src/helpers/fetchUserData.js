@@ -15,7 +15,7 @@ export const fetchUserData = async ({id,setUserData}) => {
           setUserData(response.data); 
           localStorage.setItem('token', JSON.stringify(response.data.token))
           console.log('your profile is ready')
-          return 'done'
+          return response.data.token
         }
       } catch (error) {
         console.error('Could Not get User Data:', error);
