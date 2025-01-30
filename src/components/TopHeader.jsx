@@ -27,6 +27,7 @@ export default function TopHeader() {
       </section>
       <section className="z-10 flex flex-col items-center justify-center gap-2">
         <img src={userData.profileUrl} alt="user" className="size-12" />
+        <p>{userData.profileUrl}</p>
         <p className="text-sm font-normal leading-none text-white font-adlam">
         <span>{telegram?.initDataUnsafe?.user?.first_name}</span>  <span>{ telegram?.initDataUnsafe?.user?.last_name}</span>
         </p>
