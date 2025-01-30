@@ -28,13 +28,6 @@ export const TelegramContextProvider = ({children})=>{
 
 
 
-      useEffect(() => {
-        if(telegram?.initDataUnsafe?.user){
-            fetchUserData({id:telegram.initDataUnsafe.user.id,setUserData});
-        } else{
-          console.log("You are currently not using telegram ")
-        }
-      }, [telegram]);
     
     
 return(

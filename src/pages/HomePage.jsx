@@ -31,6 +31,16 @@ export default function HomePage() {
     }
 
   },[])
+
+
+  
+  useEffect(() => {
+    if(telegram?.initDataUnsafe?.user){
+        const res = fetchUserData({id:telegram.initDataUnsafe.user.id,setUserData});
+       setU("hh")
+    } 
+    
+  }, [telegram]);
   
   const handleTapStart = () => {
     setIsPressed(true);
