@@ -17,7 +17,7 @@ export const handleTapReward = async ({coin,tapCount}) => {
 
       if (!response.ok) throw new Error('Tap failed');
 
-      const data = await response.json();
+      const {data} =  response;
       
       // Update user data with new values
     //   setUserData(prev => ({
