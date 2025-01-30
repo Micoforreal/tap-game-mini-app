@@ -92,7 +92,7 @@ export default function HomePage() {
      handleTapReward({coin:userData.coins,tapCount:clickCount})
      setClickCount(0)
         
-      }, 3000);
+      }, 1000);
     }  
   },[isClicking])
   
