@@ -14,12 +14,7 @@ export const handleTapReward = async ({coin,tapCount}) => {
         "Content-Type": "application/json",
         Authorization:`Bearer ${JSON.parse(token)}`
     }}
-      const response = await axios.post(`${BASE_URL}api/user/tap`,{coin,tapCount},configs);
-
-      // if (!response.ok) throw new Error('Tap failed');
-
-      const {data} =  response;
-      
+      const {data}= await axios.post(`${BASE_URL}api/user/tap`,{coin,tapCount},configs);      
 
       // Show reward toast
       toast.success(`+${data.rewards.coins} coins!`);
@@ -27,7 +22,7 @@ export const handleTapReward = async ({coin,tapCount}) => {
 
     } catch (error) {
       console.error('Error processing tap:', error);
-      toast.error('Failed to process tap');
+      // toast.error('Failed to process tap');
 
     }
   };
