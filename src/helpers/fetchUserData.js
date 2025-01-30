@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useContext } from "react";
 import { UserContext } from "../context/User";
+import { BASE_URL } from "./constants";
 
 export const fetchUserData = async ({id,setUserData}) => {
     const token =  localStorage.getItem("token");
@@ -10,7 +11,7 @@ export const fetchUserData = async ({id,setUserData}) => {
         telegramId:id
       }
   
-        const {data} = await axios.post('https://af5e-102-91-103-230.ngrok-free.app/api/user/init',postData);
+        const {data} = await axios.post(`${BASE_URL}api/user/init`,postData);
 
         console.log(data)
           setUserData(data.user); 

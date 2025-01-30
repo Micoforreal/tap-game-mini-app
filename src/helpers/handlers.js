@@ -3,6 +3,7 @@ import { toast } from "react-hot-toast";
 import { useContext } from "react";
 import { UserContext } from "../context/User";
 import { TelegramContext } from "../context/Telegram";
+import { BASE_URL } from "./constants";
 
 export const handleTapReward = async ({coin,tapCount}) => {
     // const {setUserData} = useContext(UserContext)
@@ -19,7 +20,7 @@ export const handleTapReward = async ({coin,tapCount}) => {
         "Content-Type": "application/json",
         Authorization:`Bearer ${JSON.parse(token)}`
     }}
-      const response = await axios.post('https://af5e-102-91-103-230.ngrok-free.app/api/user/tap',{coin,tapCount},configs);
+      const response = await axios.post(`${BASE_URL}api/user/tap`,{coin,tapCount},configs);
 
       if (!response.ok) throw new Error('Tap failed');
 
