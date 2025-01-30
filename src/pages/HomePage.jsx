@@ -24,20 +24,20 @@ export default function HomePage() {
   let clickTimeout 
 
 
-  useEffect(()=>{
-    if (telegram?.initDataUnsafe?.user?.id) {
-      const res = fetchUserData(telegram.initDataUnsafe.user.id);
-    setU(res)
-    }
+  // useEffect(()=>{
+  //   if (telegram?.initDataUnsafe?.user?.id) {
+  //     const res = fetchUserData(telegram.initDataUnsafe.user.id);
+  //   setU(res)
+  //   }
 
-  },[])
+  // },[])
 
 
   
   useEffect(() => {
     if(telegram?.initDataUnsafe?.user){
         const res = fetchUserData({id:telegram.initDataUnsafe.user.id,setUserData});
-       setU("hh")
+       setU(res)
     } 
     
   }, [telegram]);
