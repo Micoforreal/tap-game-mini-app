@@ -15,9 +15,12 @@ export default function HomePage() {
   const [isPressed, setIsPressed] = useState(false);
   const {userData,setUserData}= useContext(UserContext)
   const {telegram}= useContext(TelegramContext)
-  const [clicks, setClicks] = useState({ id:"", x:"",  y:"" });
+  const [isClicking, setIsClicking] = useState();
   const pointsToAdd = 1;
- 
+  
+  const [clickCount, setClickCount] = useState(0);
+  let clickTimeout 
+  
   const handleTapStart = () => {
     setIsPressed(true);
     // if (telegram?.hapticFeedback) {
@@ -32,6 +35,7 @@ export default function HomePage() {
   };
 
   const handleCardClick = (e)=>{
+    clearInterval(clickTimeout)
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left  - rect.width / 2;
@@ -49,22 +53,36 @@ export default function HomePage() {
     border-blue-400/30 
     z-0
   `;
-
+  
   card.appendChild(ripple);
+  setUserData((prevUser)=>({
+    ...prevUser,
+    coins:prevUser.coins + pointsToAdd
+  }))
 
     setTimeout(() => {
       card.style.transform = '';
       ripple.remove()
+      setClickCount((total)=>total+1)
+      setIsClicking(false)
     }, 100);
 
-    setUserData([...userData, { coins:userData.coins+pointsToAdd }]);
 
-
-  }
-
-
+}
+  useEffect(()=>{
+    if (!isClicking) {
+      
+      clickTimeout= setTimeout(() => {
+     handleTapReward({coin:userData.coins,tapCount:clickCount})
+        
+      }, 3000);
+    }  
+  },[isClicking])
   
+
+  // userData = userData[0]
   return (
+    
     <section className="relative flex flex-col items-start justify-start w-full gap-9">
       <TopHeader />
       <section className="w-[95%] max-w-[334px] mx-auto grid grid-cols-3 gap-4">
@@ -119,7 +137,13 @@ export default function HomePage() {
             scale-100
            
           `}
-          onClick={handleCardClick
+          onClick={(e)=>{handleCardClick(e)
+            setIsClicking(true)
+      
+           
+
+
+          }
             
           }
           // onTouchStart={handleTapStart}
