@@ -13,9 +13,10 @@ import { handleTapReward } from "../helpers/handlers";
 
 export default function HomePage() {
   const [isPressed, setIsPressed] = useState(false);
-  const {userData}= useContext(UserContext)
+  const {userData,setUserData}= useContext(UserContext)
   const {telegram}= useContext(TelegramContext)
   const [clicks, setClicks] = useState({ id:"", x:"",  y:"" });
+  const pointsToAdd = 1;
  
   const handleTapStart = () => {
     setIsPressed(true);
@@ -56,6 +57,9 @@ export default function HomePage() {
       ripple.remove()
     }, 100);
 
+    setUserData([...userData, { coins:userData.coins+pointsToAdd }]);
+
+
   }
 
 
@@ -95,13 +99,13 @@ export default function HomePage() {
         </div>
       </section>
       <section className="relative flex flex-col m-auto items-center justify-start w-11/12 gap-2">
-        <div className="size-[320px] bg-[#F97316]/15 rounded-full blur-[120px] absolute bottom-4" />
         <div className="flex items-center justify-center gap-2">
           <p className="text-xl font-bold text-white font-grotesk">
             {userData.coins}
           </p>
           <img src={coins2} alt="coins" className="object-contain size-12" />
         </div>
+        <div className="size-[320px] bg-[#F97316]/15 rounded-full blur-[120px] absolute bottom-4" />
         
         <div 
           className={`
