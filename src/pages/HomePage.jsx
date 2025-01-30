@@ -10,6 +10,7 @@ import axios from "axios"
 import { UserContext } from "../context/User";
 import { TelegramContext } from "../context/Telegram";
 import { handleTapReward } from "../helpers/handlers";
+import { fetchUserData } from "../helpers/fetchUserData";
 
 export default function HomePage() {
   const [isPressed, setIsPressed] = useState(false);
@@ -20,6 +21,12 @@ export default function HomePage() {
   
   const [clickCount, setClickCount] = useState(0);
   let clickTimeout 
+
+
+  useEffect(()=>{
+    fetchUserData(telegram?.initDataUnsafe?.user.id)
+
+  },[])
   
   const handleTapStart = () => {
     setIsPressed(true);
