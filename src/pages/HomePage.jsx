@@ -15,6 +15,7 @@ export default function HomePage() {
   const [isPressed, setIsPressed] = useState(false);
   const {userData}= useContext(UserContext)
   const {telegram}= useContext(TelegramContext)
+  const [clicks, setClicks] = useState({ id:"", x:"",  y:"" });
  
   const handleTapStart = () => {
     setIsPressed(true);
@@ -26,7 +27,36 @@ export default function HomePage() {
   const handleTapEnd = () => {
     setIsPressed(false);
     handleTapReward();
+
   };
+
+  const handleCardClick = (e)=>{
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left  - rect.width / 2;
+    const y = e.clientY - rect.top  - rect.height / 2;
+    card.style.transform = `perspective(1000px) rotateX(${-y / 10}deg) rotateY(${x / 10}deg)`;
+    
+
+    const ripple = document.createElement("div");
+  ripple.className = `
+    absolute 
+    inset-0 
+    animate-ping 
+    rounded-full 
+    border-4 
+    border-blue-400/30 
+    z-0
+  `;
+
+  card.appendChild(ripple);
+
+    setTimeout(() => {
+      card.style.transform = '';
+      ripple.remove()
+    }, 100);
+
+  }
 
 
   
@@ -64,13 +94,13 @@ export default function HomePage() {
           <p className="text-base font-medium text-white font-jakarta">Rank</p>
         </div>
       </section>
-      <section className="relative flex flex-col items-center justify-start w-11/12 gap-2">
+      <section className="relative flex flex-col m-auto items-center justify-start w-11/12 gap-2">
         <div className="size-[320px] bg-[#F97316]/15 rounded-full blur-[120px] absolute bottom-4" />
         <div className="flex items-center justify-center gap-2">
-          <img src={coins2} alt="coins" className="object-contain size-12" />
           <p className="text-xl font-bold text-white font-grotesk">
             {userData.coins}
           </p>
+          <img src={coins2} alt="coins" className="object-contain size-12" />
         </div>
         
         <div 
@@ -82,13 +112,17 @@ export default function HomePage() {
             transition-transform duration-200
             active:scale-95
             cursor-pointer
-            ${isPressed ? 'scale-95' : 'scale-100'}
+            scale-100
+           
           `}
-          onTouchStart={handleTapStart}
-          onTouchEnd={handleTapEnd}
-          onMouseDown={handleTapStart}
-          onMouseUp={handleTapEnd}
-          onMouseLeave={() => setIsPressed(false)}
+          onClick={handleCardClick
+            
+          }
+          // onTouchStart={handleTapStart}
+          // onTouchEnd={handleTapEnd}
+          // onMouseDown={handleTapStart}
+          // onMouseUp={handleTapEnd}
+          // onMouseLeave={() => setIsPressed(false)}
         >
           <div className={`
             absolute 
@@ -96,7 +130,9 @@ export default function HomePage() {
             bg-blue-400/20 
             rounded-full 
             transition-opacity duration-200
-            ${isPressed ? 'opacity-100' : 'opacity-0'}
+            opacity-0
+            
+           
           `} />
           <img 
             src={tapImg} 
@@ -105,7 +141,7 @@ export default function HomePage() {
             draggable="false"
           />
           
-          {isPressed && (
+          {/* {isPressed && (
             <div className="
               absolute 
               inset-0 
@@ -115,7 +151,7 @@ export default function HomePage() {
               border-blue-400/30
               z-0
             " />
-          )}
+          )} */}
         </div>
       </section>
 
