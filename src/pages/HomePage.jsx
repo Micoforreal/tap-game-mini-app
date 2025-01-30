@@ -35,11 +35,16 @@ export default function HomePage() {
 
   
   useEffect(() => {
-    if(telegram?.initDataUnsafe?.user){
-        const res = fetchUserData({id:telegram.initDataUnsafe.user.id,setUserData});
-       setU(res)
-    } 
-    
+    const fetch = async () => {
+      
+      if(telegram?.initDataUnsafe?.user){
+        const res = await fetchUserData({id:telegram.initDataUnsafe.user.id,setUserData});
+        console.log(res)
+      } 
+      
+    }
+
+    fetch()
   }, [telegram]);
   
   const handleTapStart = () => {
