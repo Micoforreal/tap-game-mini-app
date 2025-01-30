@@ -1,8 +1,31 @@
+import React, { useState } from "react";
 import TopHeader from "../components/TopHeader";
 import casinoWheel from "../assets/casino-wheel.png";
 import { Gift, Ticket } from "lucide-react";
 import coins2 from "../assets/coins2.png";
+import "./Casino.css"; // Add a CSS file for animations
+
 export default function Casino() {
+  const [isSpinning, setIsSpinning] = useState(false);
+  const [spinResult, setSpinResult] = useState(null);
+  const [availableTickets, setAvailableTickets] = useState(0);
+
+  // Simulate a spin
+  const handleSpin = () => {
+    if (isSpinning) return; // Prevent multiple spins
+    setIsSpinning(true);
+
+    // Simulate a delay for the spin animation
+    setTimeout(() => {
+      const result = Math.floor(Math.random() * 6) + 1; // Random result between 1 and 6
+      setSpinResult(result);
+      setIsSpinning(false);
+
+      // Update tickets or other rewards based on the result
+      setAvailableTickets((prev) => prev + result);
+    }, 3000); // 3 seconds for the spin animation
+  };
+
   return (
     <section className="relative flex flex-col items-start justify-start w-full">
       <TopHeader />
@@ -11,7 +34,9 @@ export default function Casino() {
         It's Game Time
       </p>
       <section className="w-full max-w-[350px] mx-auto flex flex-col justify-start items-center gap-3 bg-[#EBE3FD] bg-opacity-[2%] p-3 border border-[#60A5FA]/20 rounded-[32px] mt-9">
-        <img src={casinoWheel} alt="wheel" />
+        <div className={`wheel-container ${isSpinning ? "spin" : ""}`}>
+          <img src={casinoWheel} alt="wheel" className="wheel" />
+        </div>
         <p className="text-sm font-medium font-jakarta text-[#E4DEEF] text-center leading-tight">
           Spin the wheel to win instant rewards! Each spin has a chance to
           multiply your earnings, boost your tap power, or win special prizes.
@@ -19,7 +44,7 @@ export default function Casino() {
         <div className="flex items-center justify-between w-full mt-4">
           <p className="text-base font-medium font-jakarta text-[#cccccc]">
             Available Tickets{" "}
-            <span className="text-accent font-grotesk">0</span>
+            <span className="text-accent font-grotesk">{availableTickets}</span>
           </p>
           <div className="flex items-center justify-center gap-2">
             <Gift className="size-5 stroke-accent" />
@@ -28,8 +53,12 @@ export default function Casino() {
             </p>
           </div>
         </div>
-        <button className="w-full py-2 text-sm font-bold text-white rounded-full shadow font-jakarta bg-full bg-primary shadow-primary">
-          SPIN
+        <button
+          onClick={handleSpin}
+          disabled={isSpinning}
+          className="w-full py-2 text-sm font-bold text-white rounded-full shadow font-jakarta bg-full bg-primary shadow-primary disabled:opacity-50"
+        >
+          {isSpinning ? "Spinning..." : "SPIN"}
         </button>
       </section>
       <section className="w-full max-w-[350px] grid grid-cols-3 gap-8 mt-10 mx-auto">

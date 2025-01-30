@@ -1,0 +1,18 @@
+.wheel-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wheel {
+  width: 100%;
+  height: auto;
+  transition: transform 3s ease-out;
+}
+
+.spin .wheel {
+  transform: rotate(1080deg); /* Rotate 3 full circles */
+}

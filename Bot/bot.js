@@ -1,5 +1,5 @@
 import { Telegraf } from "telegraf";
-const TOKEN = "7635121657:AAGUq8flSMrIx2p5mMOXBPmLNmePP2j7nJQ";
+const TOKEN = "7690253021:AAECH7uTJYYoG7pcGuz13WA82A0McZ-mRio";
 const bot = new Telegraf(TOKEN);
 
 const web_link = "https://tap-game-mini-app.vercel.app/";
