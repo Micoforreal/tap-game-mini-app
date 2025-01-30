@@ -9,7 +9,7 @@
       { "source": "/meme", "destination": "/meme" },
       { "source": "/leaderboard", "destination": "/leaderboard" },
       { "source": "/account", "destination": "/account" },
-      { "source": "/settings", "destination": "/settings" },
+      { "source": "/settings", "destination": "/settings" }
 
     
     ]
