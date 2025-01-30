@@ -16,7 +16,7 @@ export const handleTapReward = async ({coin,tapCount}) => {
     }}
       const response = await axios.post(`${BASE_URL}api/user/tap`,{coin,tapCount},configs);
 
-      if (!response.ok) throw new Error('Tap failed');
+      // if (!response.ok) throw new Error('Tap failed');
 
       const {data} =  response;
       
