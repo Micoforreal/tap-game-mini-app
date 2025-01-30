@@ -39,7 +39,7 @@ export default function HomePage() {
       
       if(telegram?.initDataUnsafe?.user){
         const res = await fetchUserData({id:telegram.initDataUnsafe.user.id,setUserData});
-        console.log(res)
+ 
       } 
       
     }
