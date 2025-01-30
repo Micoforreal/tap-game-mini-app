@@ -3,7 +3,7 @@ import TopHeader from "../components/TopHeader";
 import casinoWheel from "../assets/casino-wheel.png";
 import { Gift, Ticket } from "lucide-react";
 import coins2 from "../assets/coins2.png";
-import "./casino.css"; // Add a CSS file for animations
+import "./Casino.css"; // Add a CSS file for animations
 
 export default function Casino() {
   const [isSpinning, setIsSpinning] = useState(false);
