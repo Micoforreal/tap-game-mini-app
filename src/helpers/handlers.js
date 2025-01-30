@@ -17,7 +17,7 @@ export const handleTapReward = async ({coin,tapCount}) => {
       const configs ={
         headers:{
         "Content-Type": "application/json",
-        Authorization:`Bearer ${token}`
+        Authorization:`Bearer ${JSON.parse(token)}`
     }}
       const response = await axios.post('https://af5e-102-91-103-230.ngrok-free.app/api/user/tap',{coin,tapCount},configs);
 
