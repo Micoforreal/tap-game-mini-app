@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { UserContext } from "../context/User";
 
 export const fetchUserData = async ({id,setUserData}) => {
-    const token = await localStorage.getItem("token");
+    const token =  localStorage.getItem("token");
     
     try {
       const postData= {
