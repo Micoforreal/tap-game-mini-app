@@ -2,7 +2,7 @@ import axios from "axios"
 import { useContext } from "react";
 import { UserContext } from "../context/User";
 
-export const fetchUserData = async (id,setUserData) => {
+export const fetchUserData = async ({id,setUserData}) => {
     
     // const {setUserData} = useContext(UserContext)
     try {
@@ -15,6 +15,7 @@ export const fetchUserData = async (id,setUserData) => {
           setUserData(response.data); 
           localStorage.setItem('token', JSON.stringify(response.data.token))
           console.log('your profile is ready')
+          return 'done'
         }
       } catch (error) {
         console.error('Could Not get User Data:', error);

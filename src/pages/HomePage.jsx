@@ -19,13 +19,15 @@ export default function HomePage() {
   const [isClicking, setIsClicking] = useState();
   const pointsToAdd = 1;
   
+  const[u,setU] = useState('')
   const [clickCount, setClickCount] = useState(0);
   let clickTimeout 
 
 
   useEffect(()=>{
     if (telegram?.initDataUnsafe?.user?.id) {
-      fetchUserData(telegram.initDataUnsafe.user.id);
+      const res = fetchUserData(telegram.initDataUnsafe.user.id);
+    setU(res)
     }
 
   },[])
@@ -103,7 +105,7 @@ export default function HomePage() {
             </p>
           </div>
           <p className="text-base font-medium text-white font-jakarta">
-            Tickets 
+            Tickets {u?"sss":"f"}
           </p>
         </div>
         <div className="w-full border border-[#EBEBEB]/30 rounded-lg py-1 flex flex-col justify-center items-center gap-1 bg-white/5">
