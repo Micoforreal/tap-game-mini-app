@@ -12,6 +12,7 @@ export const fetchUserData = async ({id,setUserData}) => {
   
         const {data} = await axios.post('https://af5e-102-91-103-230.ngrok-free.app/api/user/init',postData);
 
+        console.log(data)
           setUserData(data.user); 
           if (!token) {
             
