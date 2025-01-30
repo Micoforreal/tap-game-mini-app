@@ -1,4 +1,5 @@
 import { BadgeCheck, Globe, MailOpen, Radio } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Settings() {
   return (
@@ -74,9 +75,11 @@ export default function Settings() {
           © 2025 All Rights Reserved
         </p>
       </section>
-      <button className="w-11/12 max-w-[640px] bg-primary text-white text-lg font-jakarta font-bold rounded-full py-3 fixed bottom-4 left-[50%] -translate-x-[50%]">
+      <Link to='/'>
+      <button  className="w-11/12 max-w-[640px] bg-primary text-white text-lg font-jakarta font-bold rounded-full py-3 fixed bottom-4 left-[50%] -translate-x-[50%]">
         CLOSE
       </button>
+      </Link>
     </section>
   );
 }

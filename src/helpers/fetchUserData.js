@@ -2,6 +2,7 @@ import axios from "axios"
 import { useContext } from "react";
 import { UserContext } from "../context/User";
 import { BASE_URL } from "./constants";
+import toast from "react-hot-toast";
 
 export const fetchUserData = async ({id,setUserData}) => {
     const token =  localStorage.getItem("token");
@@ -24,6 +25,7 @@ export const fetchUserData = async ({id,setUserData}) => {
         
       } catch (error) {
         console.error('Could Not get User Data:', error);
+        toast.error('unable to connect account')
       }
     
   };

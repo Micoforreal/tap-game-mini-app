@@ -20,10 +20,6 @@ export default function HomePage() {
   const pointsToAdd = 1;
   const [clickCount, setClickCount] = useState(0);
   let clickTimeout 
-
-
-
-  
   useEffect(() => {
     const fetch = async () => {
       
@@ -39,9 +35,6 @@ export default function HomePage() {
   
   const handleTapStart = () => {
     setIsPressed(true);
-    // if (telegram?.hapticFeedback) {
-    //   telegram.hapticFeedback.impactOccurred('medium');
-    // }
   };
 
   const handleTapEnd = () => {
@@ -86,7 +79,7 @@ export default function HomePage() {
 
 }
   useEffect(()=>{
-    if (!isClicking) {
+    if (isClicking === false) {
       
       clickTimeout= setTimeout(() => {
      handleTapReward({coin:userData.coins,tapCount:clickCount})
@@ -96,8 +89,6 @@ export default function HomePage() {
     }  
   },[isClicking])
   
-
-  // userData = userData[0]
   return (
     
     <section className="relative flex flex-col items-start justify-start w-full gap-9">
@@ -186,17 +177,7 @@ export default function HomePage() {
             draggable="false"
           />
           
-          {/* {isPressed && (
-            <div className="
-              absolute 
-              inset-0 
-              animate-ping 
-              rounded-full 
-              border-4 
-              border-blue-400/30
-              z-0
-            " />
-          )} */}
+        
         </div>
       </section>
 

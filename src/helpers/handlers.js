@@ -6,15 +6,9 @@ import { TelegramContext } from "../context/Telegram";
 import { BASE_URL } from "./constants";
 
 export const handleTapReward = async ({coin,tapCount}) => {
-    // const {setUserData} = useContext(UserContext)
-    // const {telegram}= useContext(TelegramContext)
-  
 
     try {
       const token = await localStorage.getItem("token");
-      // console.log(token)
-
-
       const configs ={
         headers:{
         "Content-Type": "application/json",
@@ -26,23 +20,14 @@ export const handleTapReward = async ({coin,tapCount}) => {
 
       const {data} =  response;
       
-      // Update user data with new values
-    //   setUserData(prev => ({
-    //     ...prev,
-    //     ...data.user
-    //   }));
 
       // Show reward toast
       toast.success(`+${data.rewards.coins} coins!`);
 
-    //   if (telegram?.hapticFeedback) {
-    //     telegram.hapticFeedback.notificationOccurred('success');
-    //   }
+
     } catch (error) {
       console.error('Error processing tap:', error);
       toast.error('Failed to process tap');
-    //   if (telegram?.hapticFeedback) {
-    //     telegram.hapticFeedback.notificationOccurred('error');
-    //   }
+
     }
   };

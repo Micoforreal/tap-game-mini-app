@@ -17,6 +17,7 @@ import {
   Meme,
 } from "./pages";
 import RootLayout from "./layout/RootLayout";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const router = createBrowserRouter(
@@ -33,6 +34,7 @@ function App() {
         <Route path="/leaderboard" element={<LeaderBoard />} />
         <Route path="/account" element={<Account />} />
         <Route path="/settings" element={<Settings />} />
+
       </>
     )
   );
