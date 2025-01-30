@@ -3,8 +3,8 @@ import { useContext } from "react";
 import { UserContext } from "../context/User";
 
 export const fetchUserData = async ({id,setUserData}) => {
+    const token = await localStorage.getItem("token");
     
-    // const {setUserData} = useContext(UserContext)
     try {
       const postData= {
         telegramId:id
@@ -13,7 +13,10 @@ export const fetchUserData = async ({id,setUserData}) => {
         const {data} = await axios.post('https://af5e-102-91-103-230.ngrok-free.app/api/user/init',postData);
 
           setUserData(data.user); 
-          localStorage.setItem('token', JSON.stringify(data.token))
+          if (!token) {
+            
+              localStorage.setItem('token', JSON.stringify(data.token))
+          }
           console.log('your profile is ready')
          
         
