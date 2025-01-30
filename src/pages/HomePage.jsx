@@ -24,7 +24,9 @@ export default function HomePage() {
 
 
   useEffect(()=>{
-    fetchUserData(telegram.initDataUnsafe.user.id)
+    if (telegram?.initDataUnsafe?.user?.id) {
+      fetchUserData(telegram.initDataUnsafe.user.id);
+    }
 
   },[])
   
