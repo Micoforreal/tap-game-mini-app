@@ -1,0 +1,17 @@
+{
+    "rewrites": [
+      { "source": "/get-started", "destination": "/get-started" },
+      { "source": "/home", "destination": "/home" },
+      { "source": "/gang", "destination": "/gang" },
+      { "source": "/casino", "destination": "/casino" },
+      { "source": "/earn", "destination": "/earn" },
+      { "source": "/earn", "destination": "/earn" },
+      { "source": "/meme", "destination": "/meme" },
+      { "source": "/leaderboard", "destination": "/leaderboard" },
+      { "source": "/account", "destination": "/account" },
+      { "source": "/settings", "destination": "/settings" },
+      { "source": "/(.*)", "destination": "/" }
+    
+    ]
+  }
+  

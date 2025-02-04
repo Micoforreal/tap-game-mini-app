@@ -1,8 +1,5 @@
 import axios from "axios"
 import { toast } from "react-hot-toast";
-import { useContext } from "react";
-import { UserContext } from "../context/User";
-import { TelegramContext } from "../context/Telegram";
 import { BASE_URL } from "./constants";
 
 export const handleTapReward = async ({coin,tapCount}) => {
