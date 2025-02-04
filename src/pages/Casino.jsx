@@ -62,35 +62,35 @@ export default function Casino() {
         </button>
       </section>
       <section className="w-full max-w-[350px] grid grid-cols-3 gap-8 mt-10 mx-auto">
-        <div className="w-full border border-[#EBEBEB]/30 py-1 flex flex-col justify-center items-center gap-1 rounded-lg bg-white/5">
+        <div className="w-full border border-[#EBEBEB]/30 py-2 flex flex-col justify-center items-center gap-1 rounded-lg bg-white/5">
           <div className="flex items-center justify-center gap-2">
             <Ticket className="size-6 stroke-primary" />
             <p className="text-xl font-bold text-white font-grotesk">0</p>
           </div>
-          <p className="text-base font-jakarta font-medium text-[#E5E5E5] leading-none">
+          <p className="text-sm font-jakarta font-semibold text-[#E5E5E5] leading-none">
             Tickets
           </p>
         </div>
-        <div className="w-full border border-[#EBEBEB]/30 py-1 flex flex-col justify-center items-center gap-1 rounded-lg bg-white/5">
+        <div className="w-full border border-[#EBEBEB]/30 py-2 flex flex-col justify-center items-center gap-1 rounded-lg bg-white/5">
           <div className="flex items-center justify-center gap-2">
             <Ticket className="size-6 stroke-white" />
             <p className="text-xl font-bold text-white font-grotesk">0</p>
           </div>
-          <p className="text-base font-jakarta font-medium text-[#E5E5E5] leading-none">
+          <p className="text-sm font-jakarta font-semibold text-[#E5E5E5] leading-none">
             Tickets
           </p>
         </div>
-        <div className="w-full border border-[#EBEBEB]/30 py-1 flex flex-col justify-center items-center gap-1 rounded-lg bg-white/5">
+        <div className="w-full border border-[#EBEBEB]/30 py-2 flex flex-col justify-center items-center gap-1 rounded-lg bg-white/5">
           <div className="flex items-center justify-center gap-2">
             <Ticket className="size-6 stroke-accent" />
             <p className="text-xl font-bold text-white font-grotesk">0</p>
           </div>
-          <p className="text-base font-jakarta font-medium text-[#E5E5E5] leading-none">
+          <p className="text-sm font-jakarta font-semibold text-[#E5E5E5] leading-none">
             Tickets
           </p>
         </div>
       </section>
-      <section className="w-full max-w-[350px] mx-auto border border-[#60A5FA] rounded-[16px] flex justify-between items-center px-3 py-2 bg-black/25 mt-8">
+      <section className="w-full max-w-[350px] mx-auto border border-[#60A5FA] rounded-[16px] flex justify-between items-center p-3 bg-black/25 mt-8 mb-8">
         <div className="flex items-center justify-start gap-[6px]">
           <div className="size-8 rounded-full bg-[#D9D9D9]"></div>
           <div className="flex flex-col items-center justify-start gap-2">

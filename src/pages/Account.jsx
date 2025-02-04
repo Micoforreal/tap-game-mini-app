@@ -28,7 +28,7 @@ export default function Account() {
         </button>
       </section>
       {isProfile ? <Profile /> : <Inventory />}
-      <button className="w-11/12 max-w-[640px] bg-primary text-white text-lg font-jakarta font-bold rounded-full py-3 fixed bottom-4 left-[50%] -translate-x-[50%]">
+      <button className="w-11/12 max-w-[600px] bg-primary text-white text-lg font-jakarta font-bold rounded-full py-3 fixed bottom-4 left-[50%] -translate-x-[50%]">
         CLOSE
       </button>
     </section>

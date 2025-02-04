@@ -4,12 +4,12 @@ import thunder from "../assets/thunder.png";
 export default function Profile() {
   return (
     <>
-      <p className="text-base font-jakarta text-[#E4DEEF] leading-6 max-w-[382px] text-center mt-10">
+      <p className="text-base font-jakarta text-[#E4DEEF] leading-6 max-w-[382px] text-center mt-10 font-normal">
         Unlock new features and gain more power by reaching higher levels. Do
         this by increasing your points
       </p>
       <section className="relative flex flex-col items-center justify-start h-fit">
-        <img src={profileImg} alt="img" />
+        <img src={profileImg} alt="img" className="scale-110" />
         <p className="absolute bottom-0 font-medium leading-none text-8xl font-jakarta text-white/35 smallTxt whitespace-nowrap">
           Level #1
         </p>
@@ -38,7 +38,7 @@ export default function Profile() {
         </div>
       </div>
       <section className="flex flex-col items-center justify-start gap-3 mt-14 w-full max-w-[350px]">
-        <div className="px-4 py-2 bg-black/25 border border-[#60A5FA]/25 rounded-2xl flex flex-col justify-center items-center gap-2">
+        <div className="p-4 bg-black/25 border border-[#60A5FA]/25 rounded-2xl flex flex-col justify-center items-center gap-2">
           <p className="text-sm font-medium leading-3 text-white font-jakarta">
             Current Points
           </p>
@@ -46,7 +46,7 @@ export default function Profile() {
             <div className="bg-[#6B46C1] rounded-full">
               <img src={line} alt="line" className="size-7" />
             </div>
-            <p className="text-lg font-medium text-white font-grotesk">500</p>
+            <p className="text-lg font-semibold text-white font-grotesk">500</p>
           </div>
         </div>
         <section className="flex flex-col items-start justify-start gap-1 max-w-[350px] w-11/12 mx-auto">

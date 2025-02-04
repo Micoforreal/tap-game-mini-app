@@ -1,4 +1,13 @@
-import { BadgeCheck, Globe, MailOpen, Radio, Volume2, Bell, Volume, VolumeX } from "lucide-react";
+import {
+  BadgeCheck,
+  Globe,
+  MailOpen,
+  Radio,
+  Volume2,
+  Bell,
+  Volume,
+  VolumeX,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -24,7 +33,9 @@ const SettingItem = ({ icon, label, value, onChange, isToggle = false }) => {
           />
         </button>
       ) : (
-        <p className="text-base font-medium text-gray-400 font-jakarta">{value}</p>
+        <p className="text-base font-medium text-gray-400 font-jakarta">
+          {value}
+        </p>
       )}
     </div>
   );
@@ -60,7 +71,10 @@ export default function Settings() {
 
       {/* User Interface Section */}
       <section className="w-full max-w-[382px] mx-auto">
-        <SectionHeader icon={<BadgeCheck className="size-6 stroke-white" />} title="User Interface" />
+        <SectionHeader
+          icon={<BadgeCheck className="size-6 stroke-white" />}
+          title="User Interface"
+        />
         <div className="w-full px-4 py-3 bg-white/5 border border-[#60A5FA]/15 rounded-xl flex flex-col justify-start items-start gap-6 mt-4">
           <SettingItem
             icon={<Bell className="size-6 stroke-white" />}
@@ -95,7 +109,10 @@ export default function Settings() {
 
       {/* Miscellaneous Section */}
       <section className="w-full max-w-[382px] mx-auto">
-        <SectionHeader icon={<BadgeCheck className="size-6 stroke-white" />} title="Miscellaneous" />
+        <SectionHeader
+          icon={<BadgeCheck className="size-6 stroke-white" />}
+          title="Miscellaneous"
+        />
         <div className="w-full px-4 py-3 bg-white/5 border border-[#60A5FA]/15 rounded-xl flex flex-col justify-start items-start gap-6 mt-4">
           <Link to="https://example.com" target="_blank" className="w-full">
             <SettingItem
@@ -103,7 +120,11 @@ export default function Settings() {
               label="Visit Website"
             />
           </Link>
-          <Link to="https://t.me/publicchannel" target="_blank" className="w-full">
+          <Link
+            to="https://t.me/publicchannel"
+            target="_blank"
+            className="w-full"
+          >
             <SettingItem
               icon={<Radio className="size-6 stroke-white" />}
               label="Join Public Channel"
@@ -127,8 +148,11 @@ export default function Settings() {
       </section>
 
       {/* Close Button */}
-      <Link to="/">
-        <button className="w-11/12 max-w-[640px] bg-primary text-white text-lg font-jakarta font-bold rounded-full py-3 fixed bottom-4 left-[50%] -translate-x-[50%] hover:bg-primary/90 transition-colors">
+      <Link
+        to="/"
+        className="w-11/12 max-w-[600px] fixed bottom-4 left-[50%] -translate-x-[50%]"
+      >
+        <button className="w-full py-3 text-lg font-bold text-white transition-colors rounded-full bg-primary font-jakarta hover:bg-primary/90">
           CLOSE
         </button>
       </Link>

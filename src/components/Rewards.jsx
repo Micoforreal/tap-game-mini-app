@@ -25,7 +25,7 @@ export default function Rewards() {
         <p className="text-base font-jakarta text-[#E4DEEF] font-normal mt-3">
           On $Ex 69, every tap pays off
         </p>
-        <section className="w-full bg-black/25 border border-[#60A5FA]/25 rounded-2xl flex flex-col justify-start items-center gap-3 py-2 px-3 mt-10">
+        <section className="w-full bg-black/25 border border-[#60A5FA]/25 rounded-2xl flex flex-col justify-start items-center gap-3 py-4 px-3 mt-10">
           <p className="text-sm font-medium font-jakarta text-[#E5E5E5]">
             Up to $550 Weekly prizes
           </p>
@@ -36,7 +36,7 @@ export default function Rewards() {
             </p>
           </div>
         </section>
-        <section className="w-full bg-black/25 border border-[#60A5FA]/25 rounded-2xl flex flex-col justify-start items-center gap-3 py-2 px-3 mt-6">
+        <section className="w-full bg-black/25 border border-[#60A5FA]/25 rounded-2xl flex flex-col justify-start items-center gap-3 py-4 px-3 mt-2">
           <p className="text-sm font-medium font-jakarta text-[#E5E5E5]">
             Up to $550 Weekly prizes
           </p>

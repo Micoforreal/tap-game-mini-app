@@ -45,27 +45,27 @@ export default function Inventory() {
         </div>
       </div>
       <section className="w-full max-w-[350px] mx-auto grid grid-cols-3 gap-5 mt-14">
-        <div className="w-full border border-[#EBEBEB]/30 h-10 flex justify-center items-center gap-2 rounded-lg bg-white/5">
+        <div className="w-full border border-[#EBEBEB]/30 h-14 flex justify-center items-center gap-2 rounded-lg bg-white/5">
           <Gift className="size-6 stroke-accent" />
           <p className="text-xl font-bold text-white font-grotesk">0</p>
         </div>
-        <div className="w-full border border-[#EBEBEB]/30 h-10 flex justify-center items-center gap-2 rounded-lg bg-white/5">
+        <div className="w-full border border-[#EBEBEB]/30 h-14 flex justify-center items-center gap-2 rounded-lg bg-white/5">
           <KeyRound className="size-6 stroke-accent" />
           <p className="text-xl font-bold text-white font-grotesk">2</p>
         </div>
-        <div className="w-full border border-[#EBEBEB]/30 h-10 flex justify-center items-center gap-2 rounded-lg bg-white/5">
+        <div className="w-full border border-[#EBEBEB]/30 h-14 flex justify-center items-center gap-2 rounded-lg bg-white/5">
           <img src={rank} alt="rank" className="size-6" />
           <p className="text-xl font-bold text-white font-grotesk">+1k</p>
         </div>
-        <div className="w-full border border-[#EBEBEB]/30 h-10 flex justify-center items-center gap-2 rounded-lg bg-white/5">
+        <div className="w-full border border-[#EBEBEB]/30 h-14 flex justify-center items-center gap-2 rounded-lg bg-white/5">
           <Ticket className="size-6 stroke-primary" />
           <p className="text-xl font-bold text-white font-grotesk">0</p>
         </div>
-        <div className="w-full border border-[#EBEBEB]/30 h-10 flex justify-center items-center gap-2 rounded-lg bg-white/5">
+        <div className="w-full border border-[#EBEBEB]/30 h-14 flex justify-center items-center gap-2 rounded-lg bg-white/5">
           <Ticket className="size-6 stroke-white" />
           <p className="text-xl font-bold text-white font-grotesk">0</p>
         </div>
-        <div className="w-full border border-[#EBEBEB]/30 h-10 flex justify-center items-center gap-2 rounded-lg bg-white/5">
+        <div className="w-full border border-[#EBEBEB]/30 h-14 flex justify-center items-center gap-2 rounded-lg bg-white/5">
           <Ticket className="size-6 stroke-accent" />
           <p className="text-xl font-bold text-white font-grotesk">0</p>
         </div>

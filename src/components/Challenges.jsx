@@ -16,7 +16,7 @@ export default function Challenges() {
           <p className="text-sm text-white font-grotesk">Mon, Jan 13 2025</p>
         </div>
         <div className="w-full max-w-[350px] grid grid-cols-2 gap-6 mx-auto">
-          <div className="flex items-center justify-between w-full gap-3 px-3 py-2 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
+          <div className="flex items-center justify-between w-full gap-3 p-4 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
             <div className="flex flex-col items-start justify-start">
               <p className="text-[#E4DEEF] text-sm font-semibold font-jakarta">
                 Tap 2000 Times
@@ -28,7 +28,7 @@ export default function Challenges() {
             </div>
             <Check className="stroke-[6px] size-6 stroke-white" />
           </div>
-          <div className="flex items-center justify-between w-full gap-3 px-3 py-2 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
+          <div className="flex items-center justify-between w-full gap-3 p-4 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
             <div className="flex flex-col items-start justify-start">
               <p className="text-[#E4DEEF] text-sm font-semibold font-jakarta">
                 Tap 2000 Times
@@ -47,7 +47,7 @@ export default function Challenges() {
           <p className="text-sm text-white font-grotesk">Tue, Jan 14 2025</p>
         </div>
         <div className="w-full max-w-[350px] grid grid-cols-2 gap-6 mx-auto">
-          <div className="flex items-center justify-between w-full gap-3 px-3 py-2 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
+          <div className="flex items-center justify-between w-full gap-3 p-4 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
             <div className="flex flex-col items-start justify-start">
               <p className="text-[#E4DEEF] text-sm font-semibold font-jakarta">
                 Tap 2000 Times
@@ -59,7 +59,7 @@ export default function Challenges() {
             </div>
             <Check className="stroke-[6px] size-6 stroke-white" />
           </div>
-          <div className="flex items-center justify-between w-full gap-3 px-3 py-2 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
+          <div className="flex items-center justify-between w-full gap-3 p-4 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
             <div className="flex flex-col items-start justify-start">
               <p className="text-[#E4DEEF] text-sm font-semibold font-jakarta">
                 Tap 2000 Times
@@ -78,7 +78,7 @@ export default function Challenges() {
           <p className="text-sm text-white font-grotesk">Wed, Jan 15 2025</p>
         </div>
         <div className="w-full max-w-[350px] grid grid-cols-2 gap-6 mx-auto">
-          <div className="flex items-center justify-between w-full gap-3 px-3 py-2 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
+          <div className="flex items-center justify-between w-full gap-3 p-4 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
             <div className="flex flex-col items-start justify-start">
               <p className="text-[#E4DEEF] text-sm font-semibold font-jakarta">
                 Tap 2000 Times
@@ -90,7 +90,7 @@ export default function Challenges() {
             </div>
             <Check className="stroke-[6px] size-6 stroke-white" />
           </div>
-          <div className="flex items-center justify-between w-full gap-3 px-3 py-2 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
+          <div className="flex items-center justify-between w-full gap-3 p-4 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
             <div className="flex flex-col items-start justify-start">
               <p className="text-[#E4DEEF] text-sm font-semibold font-jakarta">
                 Tap 2000 Times
@@ -109,7 +109,7 @@ export default function Challenges() {
           <p className="text-sm text-white font-grotesk">Thurs, Jan 16 2025</p>
         </div>
         <div className="w-full max-w-[350px] grid grid-cols-2 gap-6 mx-auto">
-          <div className="flex items-center justify-between w-full gap-3 px-3 py-2 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
+          <div className="flex items-center justify-between w-full gap-3 p-4 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
             <div className="flex flex-col items-start justify-start">
               <p className="text-[#E4DEEF] text-sm font-semibold font-jakarta">
                 Tap 2000 Times
@@ -121,7 +121,7 @@ export default function Challenges() {
             </div>
             <Check className="stroke-[6px] size-6 stroke-white" />
           </div>
-          <div className="flex items-center justify-between w-full gap-3 px-3 py-2 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
+          <div className="flex items-center justify-between w-full gap-3 p-4 bg-black/25 border border-[#60A5FA]/25 rounded-2xl">
             <div className="flex flex-col items-start justify-start">
               <p className="text-[#E4DEEF] text-sm font-semibold font-jakarta">
                 Tap 2000 Times

@@ -1,15 +1,17 @@
 import { ArrowDown, ArrowLeft } from "lucide-react";
 import coins2 from "../assets/coins2.png";
-
+import {Link} from  'react-router-dom'
 export default function LeaderBoard() {
   return (
     <section className="relative flex flex-col items-start justify-start w-full gap-12 pt-5 bg1">
       <div className="size-[300px] bg-[#FC9853]/35 blur-[250px] absolute -top-32 left-[50%] -translate-x-[50%] pointer-events-none" />
       <div className="flex items-start justify-between w-full gap-2 px-4">
+        <Link to={'/home'}>
         <ArrowLeft className="stroke-white" />
+        </Link>
         <div className="text-3xl font-light text-white font-adlam">
           <p>$ EX</p>
-          <p className="ml-10 leading-none">69</p>
+          {/* <p className="ml-10 leading-none">69</p> */}
         </div>
         <p className="text-3xl font-medium text-white font-grotesk">
           Leaderboard

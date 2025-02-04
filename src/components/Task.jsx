@@ -32,8 +32,8 @@ export default function Tasks() {
               placeholder="Enter wallet address"
             />
             <div className="flex items-center justify-center gap-2">
-              <img src={coins2} alt="coins" className="object-contain size-4" />
-              <p className="text-[10px] leading-none font-bold text-white font-grotesk">
+              <img src={coins2} alt="coins" className="object-contain size-6" />
+              <p className="text-sm font-bold leading-none text-white font-grotesk">
                 500
               </p>
             </div>

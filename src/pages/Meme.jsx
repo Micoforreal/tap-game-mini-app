@@ -1,3 +1,4 @@
+
 import { Copy, Gamepad2, Heart, RotateCcw, Skull, Smile } from "lucide-react";
 
 export default function Meme() {
@@ -51,3 +52,19 @@ export default function Meme() {
     </section>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
