@@ -40,18 +40,18 @@ export default function LeaderBoard() {
       <section className="flex items-start justify-between w-full max-w-[370px] mx-auto gap-2 px-4">
         <div className="flex flex-col items-center justify-start gap-1 mt-14">
           <div className="size-20 rounded-full border-4 border-[#E4DEEF] relative">
-            <div className="bg-[#E4DEEF] size-6 rounded-full text-xs font-bold flex justify-center items-center text-black font-grotesk absolute right-0 -top-2">
+            <div className="bg-[rgb(228,222,239)] size-6 rounded-full text-xs font-bold flex justify-center items-center text-black font-grotesk absolute right-0 -top-2">
               2
             </div>
           </div>
           <p className="text-lg font-bold leading-none text-white font-grotesk">
-            {/* {leaderboard?.topUsers[1]?.telegramId} */}
+            {leaderboard?.topUsers[1]?.firstName}
           </p>
           <p className="text-[#AAAAAA] font-jakarta text-xs leading-none">
             21mins
           </p>
           <div className="flex items-center justify-center gap-1">
-            <p className="text-xs font-bold text-white font-jakarta">+5200</p>
+            <p className="text-xs font-bold text-white font-jakarta">{leaderboard?.topUsers[1].coins}</p>
             <img src={coins2} alt="coins" className="object-contain size-6" />
           </div>
         </div>
@@ -62,13 +62,13 @@ export default function LeaderBoard() {
             </div>
           </div>
           <p className="text-lg font-bold leading-none text-white font-grotesk">
-            Alien
+          {leaderboard?.topUsers[0]?.firstName}
           </p>
           <p className="text-[#AAAAAA] font-jakarta text-xs leading-none">
             21mins
           </p>
           <div className="flex items-center justify-center gap-1">
-            <p className="text-xs font-bold text-white font-jakarta">+5200</p>
+            <p className="text-xs font-bold text-white font-jakarta"> {leaderboard?.topUsers[0]?.coins}</p>
             <img src={coins2} alt="coins" className="object-contain size-6" />
           </div>
           <div className="bg-[#FF9951]/20 w-20 h-40 absolute top-6 blur-xl pointer-events-none" />
@@ -80,21 +80,20 @@ export default function LeaderBoard() {
             </div>
           </div>
           <p className="text-lg font-bold leading-none text-white font-grotesk">
-            Alien
+          {leaderboard?.topUsers[2]?.firstName}
           </p>
           <p className="text-[#AAAAAA] font-jakarta text-xs leading-none">
             21mins
           </p>
           <div className="flex items-center justify-center gap-1">
-            <p className="text-xs font-bold text-white font-jakarta">+5200</p>
+            <p className="text-xs font-bold text-white font-jakarta"> {leaderboard?.topUsers[2]?.coins}</p>
             <img src={coins2} alt="coins" className="object-contain size-6" />
           </div>
         </div>
       </section>
       <section className="w-11/12 mx-auto max-w-[382px] flex flex-col justify-start items-start gap-3 h-[calc(100vh-400px)] overflow-y-auto pb-5">
-        {Array(20)
-          .fill()
-          .map((_, i) => {
+        {leaderboard?.otherUsers
+          .map((user, i) => {
             return (
               <section
                 key={i}
@@ -107,7 +106,7 @@ export default function LeaderBoard() {
                   <div className="size-8 rounded-full bg-[#D9D9D9]"></div>
                   <div className="flex flex-col items-center justify-start gap-2">
                     <p className="text-xs leading-none font-jakarta font-bold text-[#E5E5E5]">
-                      Alien
+                  {user.firstName}
                     </p>
                     <p className="text-[8px] leading-none font-jakarta font-bold text-[#E5E5E5]">
                       Legend
@@ -117,7 +116,7 @@ export default function LeaderBoard() {
                 <div className="flex flex-col items-end justify-start gap-2">
                   <div className="flex items-center justify-center gap-1">
                     <p className="text-xs font-bold text-white font-jakarta">
-                      500
+                     {user.coins}
                     </p>
                     <img
                       src={coins2}
