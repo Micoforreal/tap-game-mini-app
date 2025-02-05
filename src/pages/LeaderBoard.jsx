@@ -51,7 +51,7 @@ export default function LeaderBoard() {
             21mins
           </p>
           <div className="flex items-center justify-center gap-1">
-            <p className="text-xs font-bold text-white font-jakarta">{leaderboard?.topUsers[1].coins}</p>
+            <p className="text-xs font-bold text-white font-jakarta">{leaderboard?.topUsers[1]?.coins}</p>
             <img src={coins2} alt="coins" className="object-contain size-6" />
           </div>
         </div>
@@ -92,8 +92,7 @@ export default function LeaderBoard() {
         </div>
       </section>
       <section className="w-11/12 mx-auto max-w-[382px] flex flex-col justify-start items-start gap-3 h-[calc(100vh-400px)] overflow-y-auto pb-5">
-        {leaderboard?.otherUsers
-          .map((user, i) => {
+        {leaderboard?.otherUsers.map((user, i) => {
             return (
               <section
                 key={i}
@@ -106,7 +105,7 @@ export default function LeaderBoard() {
                   <div className="size-8 rounded-full bg-[#D9D9D9]"></div>
                   <div className="flex flex-col items-center justify-start gap-2">
                     <p className="text-xs leading-none font-jakarta font-bold text-[#E5E5E5]">
-                  {user.firstName}
+                  {user?.firstName}
                     </p>
                     <p className="text-[8px] leading-none font-jakarta font-bold text-[#E5E5E5]">
                       Legend
@@ -116,7 +115,7 @@ export default function LeaderBoard() {
                 <div className="flex flex-col items-end justify-start gap-2">
                   <div className="flex items-center justify-center gap-1">
                     <p className="text-xs font-bold text-white font-jakarta">
-                     {user.coins}
+                     {user?.coins}
                     </p>
                     <img
                       src={coins2}
