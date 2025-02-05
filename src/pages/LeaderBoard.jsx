@@ -45,7 +45,7 @@ export default function LeaderBoard() {
             </div>
           </div>
           <p className="text-lg font-bold leading-none text-white font-grotesk">
-            {leaderboard?.topUsers[1]?.telegramId}
+            {/* {leaderboard?.topUsers[1]?.telegramId} */}
           </p>
           <p className="text-[#AAAAAA] font-jakarta text-xs leading-none">
             21mins
