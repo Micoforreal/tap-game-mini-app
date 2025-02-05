@@ -18,6 +18,8 @@ export default function LeaderBoard() {
       }
 
     }
+
+    fetch()
   },[])
 
   return (
