@@ -5,7 +5,7 @@ import { BASE_URL } from "./constants";
 import toast from "react-hot-toast";
 
 export const fetchUserData = async ({id,setUserData}) => {
-    const token =  localStorage.getItem("token");
+    // const token =  localStorage.getItem("token");
     
     try {
       const postData= {
@@ -16,10 +16,10 @@ export const fetchUserData = async ({id,setUserData}) => {
 
         console.log(data)
           setUserData(data.user); 
-          if (!token) {
+          // if (!token) {
             
               localStorage.setItem('token', JSON.stringify(data.token))
-          }
+          // }
           console.log('your profile is ready')
          
         

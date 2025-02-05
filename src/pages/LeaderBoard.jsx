@@ -40,6 +40,8 @@ export default function LeaderBoard() {
       <section className="flex items-start justify-between w-full max-w-[370px] mx-auto gap-2 px-4">
         <div className="flex flex-col items-center justify-start gap-1 mt-14">
           <div className="size-20 rounded-full border-4 border-[#E4DEEF] relative">
+          <img className="rounded-full" src={leaderboard?.topUsers[1]?.profilePic}/>
+     
             <div className="bg-[rgb(228,222,239)] size-6 rounded-full text-xs font-bold flex justify-center items-center text-black font-grotesk absolute right-0 -top-2">
               2
             </div>
@@ -57,9 +59,10 @@ export default function LeaderBoard() {
         </div>
         <div className="relative flex flex-col items-center justify-start gap-1">
           <div className="relative z-20 bg-white border-4 rounded-full size-24 border-primary">
-            <div className="absolute right-0 flex items-center justify-center text-xs font-bold text-white rounded-full bg-primary size-6 font-grotesk -top-2">
+           <img className="rounded-full" src={leaderboard?.topUsers[0]?.profilePic}/>
+            <span className="absolute right-0 flex items-center justify-center text-xs font-bold text-white rounded-full bg-primary size-6 font-grotesk -top-2">
               1
-            </div>
+            </span>
           </div>
           <p className="text-lg font-bold leading-none text-white font-grotesk">
           {leaderboard?.topUsers[0]?.firstName}
@@ -75,6 +78,8 @@ export default function LeaderBoard() {
         </div>
         <div className="flex flex-col items-center justify-start gap-1 mt-14">
           <div className="size-20 rounded-full border-4 border-[#E4DEEF] relative">
+          <img className="rounded-full" src={leaderboard?.topUsers[2]?.profilePic}/>
+     
             <div className="bg-[#E4DEEF] size-6 rounded-full text-xs font-bold flex justify-center items-center text-black font-grotesk absolute right-0 -top-2">
               3
             </div>
