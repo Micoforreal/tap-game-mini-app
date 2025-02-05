@@ -37,64 +37,44 @@ export default function LeaderBoard() {
           Leaderboard
         </p>
       </div>
-      <section className="flex items-start justify-between w-full max-w-[370px] mx-auto gap-2 px-4">
-        <div className="flex flex-col items-center justify-start gap-1 mt-14">
-          <div className="size-20 rounded-full border-4 border-[#E4DEEF] relative">
-          <img className="rounded-full" src={leaderboard?.topUsers[1]?.profilePic}/>
-     
-            <div className="bg-[rgb(228,222,239)] size-6 rounded-full text-xs font-bold flex justify-center items-center text-black font-grotesk absolute right-0 -top-2">
-              2
-            </div>
-          </div>
-          <p className="text-lg font-bold leading-none text-white font-grotesk">
-            {leaderboard?.topUsers[1]?.firstName}
-          </p>
-          <p className="text-[#AAAAAA] font-jakarta text-xs leading-none">
-            21mins
-          </p>
-          <div className="flex items-center justify-center gap-1">
-            <p className="text-xs font-bold text-white font-jakarta">{leaderboard?.topUsers[1]?.coins}</p>
-            <img src={coins2} alt="coins" className="object-contain size-6" />
-          </div>
+      <section className="flex items-start justify-between w-full max-w-[370px] mx-auto gap-2 px-4 ">
+        {leaderboard?.topUsers.map((user,index)=>(
+
+          <div className={`relative ${index ===0 && 'left-32 bottom-9' } ${index ===1 && "right-32"} flex flex-col items-center justify-start gap-1 `}>
+          <div className={`relative z-20 bg-white border-4 rounded-full size-20 ${index===0 && 'border-primary size-24 '  }`}>
+          {user?.profilePic?
+      (
+
+        <img src={user?.profilePic} alt="lead" className=" rounded-full" />
+      ):( 
+        <div className="text-white bg-[#6B46C1] rounded-full w-full h-full font-semibold  flex justify-center items-center ">
+        <span>
+          {user.firstName.charAt(0)}
+          </span>
+
+          <span>
+            {user.lastName.charAt(0)}
+          </span>
         </div>
-        <div className="relative flex flex-col items-center justify-start gap-1">
-          <div className="relative z-20 bg-white border-4 rounded-full size-24 border-primary">
-           <img className="rounded-full" src={leaderboard?.topUsers[0]?.profilePic}/>
-            <span className="absolute right-0 flex items-center justify-center text-xs font-bold text-white rounded-full bg-primary size-6 font-grotesk -top-2">
-              1
+      )}
+         <span className={`absolute right-0 flex items-center justify-center text-xs font-bold ${index===0?'text-white  bg-primary ':'bg-white'} rounded-full size-6 font-grotesk -top-2`}>
+              {index +1}
             </span>
           </div>
           <p className="text-lg font-bold leading-none text-white font-grotesk">
-          {leaderboard?.topUsers[0]?.firstName}
+          {user?.firstName}
           </p>
           <p className="text-[#AAAAAA] font-jakarta text-xs leading-none">
             21mins
           </p>
           <div className="flex items-center justify-center gap-1">
-            <p className="text-xs font-bold text-white font-jakarta"> {leaderboard?.topUsers[0]?.coins}</p>
+            <p className="text-xs font-bold text-white font-jakarta"> {user?.coins}</p>
             <img src={coins2} alt="coins" className="object-contain size-6" />
           </div>
           <div className="bg-[#FF9951]/20 w-20 h-40 absolute top-6 blur-xl pointer-events-none" />
         </div>
-        <div className="flex flex-col items-center justify-start gap-1 mt-14">
-          <div className="size-20 rounded-full border-4 border-[#E4DEEF] relative">
-          <img className="rounded-full" src={leaderboard?.topUsers[2]?.profilePic}/>
-     
-            <div className="bg-[#E4DEEF] size-6 rounded-full text-xs font-bold flex justify-center items-center text-black font-grotesk absolute right-0 -top-2">
-              3
-            </div>
-          </div>
-          <p className="text-lg font-bold leading-none text-white font-grotesk">
-          {leaderboard?.topUsers[2]?.firstName}
-          </p>
-          <p className="text-[#AAAAAA] font-jakarta text-xs leading-none">
-            21mins
-          </p>
-          <div className="flex items-center justify-center gap-1">
-            <p className="text-xs font-bold text-white font-jakarta"> {leaderboard?.topUsers[2]?.coins}</p>
-            <img src={coins2} alt="coins" className="object-contain size-6" />
-          </div>
-        </div>
+        ))}
+
       </section>
       <section className="w-11/12 mx-auto max-w-[382px] flex flex-col justify-start items-start gap-3 h-[calc(100vh-400px)] overflow-y-auto pb-5">
         {leaderboard?.otherUsers.map((user, i) => {
@@ -107,7 +87,26 @@ export default function LeaderBoard() {
                   <p className="text-[#9F9AAC] text-base font-bold font-grotesk">
                     {i + 4}
                   </p>
-                  <div className="size-8 rounded-full bg-[#D9D9D9]"></div>
+                  <div className="size-8 rounded-full bg-[#D9D9D9]">
+
+                 
+                 
+                  {user?.profilePic?
+      (
+
+        <img src={user.profilePic} alt="user" className=" rounded-full" />
+      ):( 
+        <div className="text-white bg-[#6B46C1] rounded-full w-full h-full font-semibold text-sm  flex justify-center items-center ">
+        <span>
+          {user?.firstName?.charAt(0)}
+          </span>
+
+          <span>
+            {user?.lastName?.charAt(0)}
+          </span>
+        </div>
+      )}
+                  </div>
                   <div className="flex flex-col items-center justify-start gap-2">
                     <p className="text-xs leading-none font-jakarta font-bold text-[#E5E5E5]">
                   {user?.firstName}
