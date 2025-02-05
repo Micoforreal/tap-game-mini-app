@@ -1,7 +1,25 @@
 import { ArrowDown, ArrowLeft } from "lucide-react";
 import coins2 from "../assets/coins2.png";
 import {Link} from  'react-router-dom'
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { BASE_URL } from "../helpers/constants";
+
 export default function LeaderBoard() {
+  const [leaderboard, setLeaderboard]= useState();
+
+
+  useEffect(()=>{
+    const fetch = async () => {
+      const {data} = await axios.get(`${BASE_URL}api/leaderboard`);
+      console.log(data)
+      if(data){
+        setLeaderboard(data)
+      }
+
+    }
+  },[])
+
   return (
     <section className="relative flex flex-col items-start justify-start w-full gap-12 pt-5 bg1">
       <div className="size-[300px] bg-[#FC9853]/35 blur-[250px] absolute -top-32 left-[50%] -translate-x-[50%] pointer-events-none" />
@@ -25,7 +43,7 @@ export default function LeaderBoard() {
             </div>
           </div>
           <p className="text-lg font-bold leading-none text-white font-grotesk">
-            Alien
+            {leaderboard?.topUsers[1]?.telegramId}
           </p>
           <p className="text-[#AAAAAA] font-jakarta text-xs leading-none">
             21mins
