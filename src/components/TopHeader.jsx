@@ -28,8 +28,10 @@ export default function TopHeader() {
       <section className="z-10 flex flex-col items-center justify-center gap-2">
       {userData?.profileUrl?
       (
-
+        <>
+        <p>djdjdj</p>
         <img src={userData.profileUrl} alt="user" className="size-12 rounded-full" />
+        </>
       ):( 
         <div className="text-white bg-[#6B46C1] rounded-full w-12 h-12 font-semibold  flex justify-center items-center ">
         <span>
