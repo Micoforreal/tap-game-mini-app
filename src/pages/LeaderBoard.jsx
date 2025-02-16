@@ -11,9 +11,9 @@ export default function LeaderBoard() {
 
   useEffect(()=>{
     const fetch = async () => {
-      const res = await axios.get(`${BASE_URL}api/leaderboard/`);
-      if(res?.data){
-        setLeaderboard(res.data)
+      const {data} = await axios.get(`${BASE_URL}api/leaderboard/`);
+      if(data){
+        setLeaderboard(data)
       }
 
     }
