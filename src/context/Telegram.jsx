@@ -28,6 +28,21 @@ export const TelegramContextProvider = ({children})=>{
 
 
 
+      
+  useEffect(() => {
+    const fetch = async () => {
+      if (telegram?.initDataUnsafe?.user) {
+        const res = await fetchUserData({
+          id: telegram.initDataUnsafe.user.id,
+          setUserData,
+        });
+      }
+    };
+    fetch();
+  }, [telegram]);
+
+
+
     
     
 return(
