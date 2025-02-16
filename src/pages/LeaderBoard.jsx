@@ -37,7 +37,7 @@ export default function LeaderBoard() {
         </p>
       </div>
       <section className="flex items-start justify-between w-full max-w-[370px] mx-auto gap-2 px-4 ">
-        {leaderboard?.topUsers.map((user,index)=>(
+        {leaderboard?.topUsers?.map((user,index)=>(
 
           <div className={`relative ${index ===0 && 'left-32 bottom-9' } ${index ===1 && "right-32"} flex flex-col items-center justify-start gap-1 `}>
           <div className={`relative z-20 bg-white border-4 rounded-full size-20 ${index===0 && 'border-primary size-24 '  }`}>
