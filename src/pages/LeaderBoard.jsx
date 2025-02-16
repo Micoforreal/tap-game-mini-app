@@ -134,20 +134,7 @@ export default function LeaderBoard() {
             );
           })}
       </section>
-      <section className="w-full bg-gradient-to-b from-[#1F1838]/50 to-[#201B2B] py-8 flex justify-center items-center fixed bottom-0 left-[50%] -translate-x-[50%] max-w-[640px] z-20">
-        <section className="border-2 border-[#E4DEEF] py-2 px-[14px] rounded-full flex justify-center items-center gap-4 shadow-inner shadow-[#7F97B5]/40 bg-[#1A1A1A]">
-          <div className="bg-white border rounded-full size-12 border-primary"></div>
-          <div className="flex flex-col items-start justify-start gap-[9px]">
-            <p className="text-base font-jakarta font-semibold text-[#E5E5E5] leading-none">
-              YOU
-            </p>
-            <p className="text-2xl font-bold leading-none font-grotesk text-accent">
-              #98
-            </p>
-          </div>
-          <ArrowDown className="ml-3 size-5 stroke-white" />
-        </section>
-      </section>
+      {/* */}
     </section>
   );
 }
