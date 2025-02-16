@@ -20,17 +20,17 @@ export default function HomePage() {
   const [tapAnimation, setTapAnimation] = useState(false);
   let clickTimeout;
 
-  // useEffect(() => {
-  //   const fetch = async () => {
-  //     if (telegram?.initDataUnsafe?.user) {
-  //       const res = await fetchUserData({
-  //         id: telegram.initDataUnsafe.user.id,
-  //         setUserData,
-  //       });
-  //     }
-  //   };
-  //   fetch();
-  // }, [telegram]);
+  useEffect(() => {
+    const fetch = async () => {
+      if (telegram?.initDataUnsafe?.user) {
+        const res = await fetchUserData({
+          id: telegram.initDataUnsafe.user.id,
+          setUserData,
+        });
+      }
+    };
+    fetch();
+  }, [telegram]);
 
   const calculateProgress = (taps) => {
     const progress = (taps % TAPS_PER_LEVEL) / (TAPS_PER_LEVEL / 100);
