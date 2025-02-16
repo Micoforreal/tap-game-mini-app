@@ -76,7 +76,7 @@ export default function LeaderBoard() {
 
       </section>
       <section className="w-11/12 mx-auto max-w-[382px] flex flex-col justify-start items-start gap-3 h-[calc(100vh-400px)] overflow-y-auto pb-5">
-        {leaderboard?.otherUsers.map((user, i) => {
+        {leaderboard?.otherUsers?.map((user, i) => {
             return (
               <section
                 key={i}
