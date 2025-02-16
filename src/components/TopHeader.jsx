@@ -29,7 +29,6 @@ export default function TopHeader() {
       {userData?.profilePic?
       (
         <>
-        <p>djdjdj</p>
         <img src={userData?.profilePic} alt="user" className="size-12 rounded-full" />
         </>
       ):( 

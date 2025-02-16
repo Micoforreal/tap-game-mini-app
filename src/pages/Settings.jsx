@@ -149,7 +149,7 @@ export default function Settings() {
 
       {/* Close Button */}
       <Link
-        to="/"
+        to="/home"
         className="w-11/12 max-w-[600px] fixed bottom-4 left-[50%] -translate-x-[50%]"
       >
         <button className="w-full py-3 text-lg font-bold text-white transition-colors rounded-full bg-primary font-jakarta hover:bg-primary/90">

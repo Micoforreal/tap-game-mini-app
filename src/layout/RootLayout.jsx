@@ -43,7 +43,7 @@ export default function RootLayout() {
             className={({ isActive }) =>
               isActive ? homeNav.isActive : homeNav.isPassive
             }
-            to={"/"}
+            to={"/home"}
           >
             <p>$Ex</p>
             <p>69</p>
