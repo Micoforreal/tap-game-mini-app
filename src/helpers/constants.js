@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://7db1-102-91-93-217.ngrok-free.app/'
+export const BASE_URL = 'https://tap-miniapp-backend.onrender.com/'
