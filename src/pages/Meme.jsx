@@ -1,20 +1,47 @@
 
 import { Copy, Gamepad2, Heart, RotateCcw, Skull, Smile } from "lucide-react";
 import {  useState } from "react";
+import axios from "axios";
+import Loading from "../components/loading";
+
 
 export default function Meme() {
   const [input,setInputs] = useState({userPrompt:''})
+  const [generatedImage, setGeneratedImage] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const handleChange = (e)=>{
     setInputs((prev)=>({...prev, [e.target.name]:e.target.value}))
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/api/user/generate-image",
+        {
+      prompt: input.userPrompt,
+
+        });
+
+
+        if (response.status === 200) {
+          setIsLoading(false);
+          setGeneratedImage(response.data.imageUrl);
+          
+        }
     
 
-    
-
-    
   }
+  catch (error) {
+    setError(error.message);
+    setIsLoading(false);
+    console.log(error);
+}
+  };
 
 
   return (
@@ -26,7 +53,7 @@ export default function Meme() {
         Enter a prompt and choose your preferred style to generate your
         mind-blowing memes
       </p>
-      <form className="w-full max-w-[382px]" onSubmit={handleSubmit}>
+      <form className="w-full max-w-[382px]" >
         
       <section className="   rounded-3xl flex flex-col justify-cente items-end gap- mt-12">
        
@@ -51,8 +78,11 @@ export default function Meme() {
           <Copy className="size-4 stroke-[#1A1A1A]" />
           <RotateCcw className="size-4 stroke-[#1A1A1A]" />
         </div>
+        { error && <p className="text-red-400 mr-auto ms-3 ">{error}</p>}
 
-        <button className=" border-[#60A5FA]/30 bg-accent  rounded-full py-2 px-4">Generate</button>
+        <button 
+        onClick={handleSubmit}
+         className=" border-[#60A5FA]/30 bg-accent  rounded-full py-2 px-4">Generate</button>
       </section>
 
         </form>
@@ -83,7 +113,26 @@ export default function Meme() {
             <p className="text-xs font-semibold font-jakarta">Gaming</p>
           </button>
         </section>
-        <section className="w-full max-w-[350px] h-[280px] border-2 border-primary mx-auto rounded-[40px] bg-gray-400"></section>
+        <section className="w-full max-w-[350px] h-[280px] 
+        border-2 border-primary mx-auto rounded-[40px]
+         bgray-400">
+
+          {isLoading ? (
+            <div className="w-full h-full flex items-center justify-center">
+
+            <Loading />
+
+            </div>
+          ) : (
+            generatedImage &&
+
+            <img
+              src={generatedImage}
+              alt="generated meme"
+              className="w-full h-full object-cover rounded-[40px]"
+            />
+          )}
+         </section>
       </section>
     </section>
   );
