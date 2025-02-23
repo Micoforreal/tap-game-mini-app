@@ -3,6 +3,7 @@ import { Copy, Gamepad2, Heart, RotateCcw, Skull, Smile } from "lucide-react";
 import {  useState } from "react";
 import axios from "axios";
 import Loading from "../components/loading";
+import { BASE_URL } from "../helpers/constants";
 
 
 export default function Meme() {
@@ -21,7 +22,7 @@ export default function Meme() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/user/generate-image",
+        `${BASE_URL}api/user/generate-image`,
         {
       prompt: input.userPrompt,
 
