@@ -83,7 +83,9 @@ export default function Meme() {
 
         <button 
         onClick={handleSubmit}
-         className=" border-[#60A5FA]/30 bg-accent  rounded-full py-2 px-4">Generate</button>
+
+        disabled={isLoading}
+         className=" disabled:bg-gray-400  disabled:text-gray-500 border-[#60A5FA]/30 bg-accent  rounded-full py-2 px-4">Generate</button>
       </section>
 
         </form>
