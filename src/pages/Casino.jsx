@@ -112,7 +112,7 @@ export default function Casino() {
 
   };
   useEffect(()=>{
-    if (isSpinning === false) {
+    if (isSpinning === false && spinResult !== null) {
       
       setTimeout(() => {
         handleSpinReward(winnings)
