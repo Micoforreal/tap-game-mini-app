@@ -116,7 +116,7 @@ export default function Casino() {
       
       setTimeout(() => {
         handleSpinReward(winnings)
-      }, 1000);
+      }, 500);
     }
 
   },[isSpinning])
