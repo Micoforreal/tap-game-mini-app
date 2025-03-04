@@ -52,7 +52,7 @@ export default function Meme() {
     try {
       setIsLoading(true)
 
-      axios.post(`${BASE_URL}/api/user/send-user-image`,{imageUrl:generatedImage})
+      axios.post(`${BASE_URL}api/user/send-user-image`,{imageUrl:generatedImage})
       // const proxyUrl = `${BASE_URL}api/user/proxy-image?url=${encodeURIComponent(generatedImage)}`;
     
       // const response = await fetch(proxyUrl);
