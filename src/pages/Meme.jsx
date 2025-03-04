@@ -51,22 +51,24 @@ export default function Meme() {
     }
     try {
       setIsLoading(true)
-      const proxyUrl = `${BASE_URL}api/user/proxy-image?url=${encodeURIComponent(generatedImage)}`;
+
+      axios.post(`${BASE_URL}/api/user/send-user-image`,{imageUrl:generatedImage})
+      // const proxyUrl = `${BASE_URL}api/user/proxy-image?url=${encodeURIComponent(generatedImage)}`;
     
-      const response = await fetch(proxyUrl);
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
+      // const response = await fetch(proxyUrl);
+      // const blob = await response.blob();
+      // const url = URL.createObjectURL(blob);
   
-      // Create a hidden <a> tag to trigger download
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "generated-image.png";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // // Create a hidden <a> tag to trigger download
+      // const link = document.createElement("a");
+      // link.href = url;
+      // link.download = "generated-image.png";
+      // document.body.appendChild(link);
+      // link.click();
+      // document.body.removeChild(link);
       
-      // Free memory
-      URL.revokeObjectURL(url);
+      // // Free memory
+      // URL.revokeObjectURL(url);
       setIsLoading(false)
     } catch (error) {
 
@@ -187,3 +189,10 @@ export default function Meme() {
     </>
   );
 }
+
+
+
+
+
+
+

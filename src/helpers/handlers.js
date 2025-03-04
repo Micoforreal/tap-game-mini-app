@@ -2,15 +2,21 @@ import axios from "axios"
 import { toast } from "react-hot-toast";
 import { BASE_URL } from "./constants";
 
+
+
+const token = localStorage.getItem("token");
+const configs ={
+  headers:{
+  "Content-Type": "application/json",
+  Authorization:`Bearer ${JSON.parse(token)}`
+}}
+
+
+
 export const handleTapReward = async ({coin,tapCount}) => {
 
     try {
-      const token = await localStorage.getItem("token");
-      const configs ={
-        headers:{
-        "Content-Type": "application/json",
-        Authorization:`Bearer ${JSON.parse(token)}`
-    }}
+    
       const {data}= await axios.post(`${BASE_URL}api/user/tap`,{coin,tapCount},configs);      
 
       // Show reward toast
@@ -23,3 +29,15 @@ export const handleTapReward = async ({coin,tapCount}) => {
 
     }
   };
+
+
+  export const handleSpinReward = async (point) => {
+    try {
+      
+      // axios.post(`${BASE_URL}/api/user/spin-reward`, {point},configs)
+      console.log('yay')
+      
+    } catch (error) {
+      
+    }
+  }
