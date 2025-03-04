@@ -46,38 +46,7 @@ export default function Meme() {
   };
 
 
-  // const downloadImage = async () => {
-  //   if (!generatedImage) {
-  //     return;
-  //   }
-  //   try {
-  //     setIsLoading(true)
 
-  //     axios.post(`${BASE_URL}api/user/send-user-image`,{imageUrl:generatedImage})
-  //     // const proxyUrl = `${BASE_URL}api/user/proxy-image?url=${encodeURIComponent(generatedImage)}`;
-    
-  //     // const response = await fetch(proxyUrl);
-  //     // const blob = await response.blob();
-  //     // const url = URL.createObjectURL(blob);
-  
-  //     // // Create a hidden <a> tag to trigger download
-  //     // const link = document.createElement("a");
-  //     // link.href = url;
-  //     // link.download = "generated-image.png";
-  //     // document.body.appendChild(link);
-  //     // link.click();
-  //     // document.body.removeChild(link);
-      
-  //     // // Free memory
-  //     // URL.revokeObjectURL(url);
-  //     setIsLoading(false)
-  //   } catch (error) {
-
-  //     setIsLoading(false)
-  //     toast.error("Couldn't download image try again")
-  //     console.error("Error downloading image:", error);
-  //   }
-  // };
   
 
   const downloadImage = async () => {
