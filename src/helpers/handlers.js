@@ -38,6 +38,7 @@ export const handleTapReward = async ({coin,tapCount}) => {
    
       
     } catch (error) {
+      toast.error("something went while proccessing your reward")
       
     }
   }
