@@ -34,7 +34,7 @@ export const handleTapReward = async ({coin,tapCount}) => {
   export const handleSpinReward = async (point) => {
     try {
       
-      axios.post(`${BASE_URL}/api/user/spin-reward`, {points:point},configs)
+      axios.post(`${BASE_URL}api/user/spin-reward`, {points:point},configs)
    
       
     } catch (error) {
